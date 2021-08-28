@@ -11,7 +11,7 @@ export const StyledCard = styled(View)`
     height: 170px;
     margin-top: 15px;
     border-radius: 5px;
-    width: 95%;
+    width: 92%;
     transform: scale(1);
 `;
 
@@ -19,6 +19,7 @@ export const StyledScreenShowCards = styled(View)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #87CEEB;
 `;
 
 export const StyledTitle = styled(View)`
