@@ -14,15 +14,15 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     category: "food",
     barcode:"47575757585"
 },{
-  name:"arroz",
+  name:"chocolate",
   price: "30",
-  description:"arroz Tio João",
+  description:"Nestle",
   category: "food",
   barcode:"47575757585"
 },{
-  name:"arroz",
+  name:"bolo",
   price: "30",
-  description:"arroz Tio João",
+  description:"Tia Nastácia",
   category: "food",
   barcode:"47575757585"
 }];
@@ -37,15 +37,15 @@ useEffect(() => {
     products && products.map((product, index) => {
       return (<Styled.StyledCard>
         <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
-        {/* <Card.Divider/>
+        <Card.Divider/>
         <View key={index}>
           <Card.Image
-            style={{}}
+            style={{height: '100px', paddingTop: 0}}
             // resizeMode="cover"
             source={require("../assets/images/arroz.jpg")}
           />
-          <Text>{product.description}</Text>
-        </View> */}
+          <Styled.StyledText>{product.description}</Styled.StyledText>
+        </View>
         </Styled.StyledCard>
       );
     })
