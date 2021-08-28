@@ -24,7 +24,7 @@ export const StyledTitle = styled(View)`
     color: rgb(67, 72, 77);
     background-color: ${background};
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 3px;
     height: 20px;
