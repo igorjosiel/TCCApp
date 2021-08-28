@@ -1,8 +1,10 @@
-import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Card } from 'react-native-elements';
+import React, {useEffect} from 'react';
+import { StyleSheet, Image } from 'react-native'
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import * as Styled from './components';
+import { Card } from 'react-native-elements';
+import {getProducts} from '../services';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   const products = [{
@@ -25,26 +27,30 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   barcode:"47575757585"
 }];
 
+useEffect(() => {
+  // console.log(getProducts());
+}, []);
+
   return (
-    <View>
+    <Styled.StyledScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Card>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Divider/>
+      return (<Styled.StyledCard>
+        <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
+        {/* <Card.Divider/>
         <View key={index}>
           <Card.Image
-            // style={styles.image}
+            style={{}}
             // resizeMode="cover"
             source={require("../assets/images/arroz.jpg")}
           />
           <Text>{product.description}</Text>
-        </View>
-        </Card>
+        </View> */}
+        </Styled.StyledCard>
       );
     })
   }
-    </View>
+    </Styled.StyledScreenShowCards>
   );
 }
 
