@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, Button } from "react-native";
 import { Image } from 'react-native';
+
 
 const background = "#FFF";
 
@@ -32,7 +33,7 @@ export const StyledTitle = styled(Text)`
     font-weight: bold;
     margin-top: 4px;
     height: 20px;
-    text-align: center;
+    text-align: ${props => props.center ? 'center' : 'start'};
 `;
 
 export const StyledText = styled(Text)`
@@ -52,6 +53,16 @@ export const StyledCardInformations = styled(View)`
     margin-right: auto;
     margin-top: 15px;
     width: 90%;
-    border: 1px solid green;
-    height: 100px;
+    height: 200px;
+`;
+
+export const StyledRowsCardInformations = styled(View)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+`;
+
+export const StyledContainerButton = styled(View)`
+    margin-top: 22px;
 `;

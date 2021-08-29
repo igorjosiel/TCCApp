@@ -34,7 +34,7 @@ useEffect(() => {
       {
     products && products.map((product, index) => {
       return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct')}>
-        <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
+        <Styled.StyledTitle center={true}>{product.name}</Styled.StyledTitle>
         <View>
           <Styled.StyledImage
             height="120px" width="100%"

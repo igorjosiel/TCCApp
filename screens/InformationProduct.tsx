@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 import * as Styled from './components';
 
 const product = {
@@ -10,17 +10,32 @@ const product = {
   barcode:"47575757585"
 };
 
+const informationsProduct = [{label: 'Produto', value: product.name},
+                             {label: 'Descrição', value: product.description},
+                             {label: 'Categoria', value: product.category},
+                             {label: 'Preço', value: product.price},
+                             {label: 'Código de Barras', value: product.barcode}];
+
 const InformationProduct = () => (
   <Styled.StyledScreenShowCards>
-    <Styled.StyledCard height="400px" width="92%">
-      <Styled.StyledTitle>arroz</Styled.StyledTitle>
+    <Styled.StyledCard height="545px" width="92%">
+      <Styled.StyledTitle center={true}>arroz</Styled.StyledTitle>
       <View>
           <Styled.StyledImage
-            height="200px" width="100%"
+            height="240px" width="100%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.StyledCardInformations>
-            
+            {informationsProduct && informationsProduct.map((information, index) => {
+              return <Styled.StyledRowsCardInformations key={index}>
+                <Styled.StyledTitle>{information.label}</Styled.StyledTitle>
+                <Styled.StyledText>{information.value}</Styled.StyledText>
+              </Styled.StyledRowsCardInformations>
+            })}
+            <Styled.StyledContainerButton>
+              <Button title="Voltar" color="#00BFFF"
+                onPress={() => console.log('Simple Button pressed')}></Button>
+            </Styled.StyledContainerButton>
           </Styled.StyledCardInformations>
         </View>
     </Styled.StyledCard>
