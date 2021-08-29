@@ -46,3 +46,12 @@ export const StyledImage = styled(Image)`
     height: ${props => props.height};
     width: ${props => props.width};
 `;
+
+export const StyledCardInformations = styled(View)`
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 90%;
+    border: 1px solid green;
+    height: 100px;
+`;

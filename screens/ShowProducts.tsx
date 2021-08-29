@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import { View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import * as Styled from './components';
-import { Card } from 'react-native-elements';
 import {getProducts} from '../services';
 
 export default function ShowProducts({ navigation }: RootTabScreenProps<'TabOne'>) {

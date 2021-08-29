@@ -1,7 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
 import * as Styled from './components';
-import { Card } from 'react-native-elements';
+
+const product = {
+  name:"arroz",
+  price: "30",
+  description:"arroz Tio João",
+  category: "food",
+  barcode:"47575757585"
+};
 
 const InformationProduct = () => (
   <Styled.StyledScreenShowCards>
@@ -12,15 +19,13 @@ const InformationProduct = () => (
             height="200px" width="100%"
             source={require("../assets/images/arroz.jpg")}
           />
-          <Styled.StyledText>Levieste</Styled.StyledText>
+          <Styled.StyledCardInformations>
+            
+          </Styled.StyledCardInformations>
         </View>
     </Styled.StyledCard>
   </Styled.StyledScreenShowCards>
 );
-
-InformationProduct.navigationOptions = {
-  title: 'About',
-}
 
 
 export default InformationProduct;
