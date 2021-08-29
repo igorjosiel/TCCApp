@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 import * as Styled from './components';
+import formatMoney from '../utils/formatMoney';
 
 const product = {
   name:"arroz",
@@ -13,7 +14,7 @@ const product = {
 const informationsProduct = [{label: 'Produto', value: product.name},
                              {label: 'Descrição', value: product.description},
                              {label: 'Categoria', value: product.category},
-                             {label: 'Preço', value: product.price},
+                             {label: 'Preço', value: formatMoney(product.price)},
                              {label: 'Código de Barras', value: product.barcode}];
 
 const InformationProduct = () => (
