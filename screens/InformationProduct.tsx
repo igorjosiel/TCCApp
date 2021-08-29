@@ -20,16 +20,16 @@ const informationsProduct = [{label: 'Produto', value: product.name},
 const InformationProduct = () => (
   <Styled.StyledScreenShowCards>
     <Styled.StyledCard height="545px" width="92%">
-      <Styled.StyledTitle center={true}>arroz</Styled.StyledTitle>
+      <Styled.StyledTitle center={true} height="28px">arroz</Styled.StyledTitle>
       <View>
           <Styled.StyledImage
-            height="240px" width="100%"
+            height="240px" width="90%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.StyledCardInformations>
             {informationsProduct && informationsProduct.map((information, index) => {
               return <Styled.StyledRowsCardInformations key={index}>
-                <Styled.StyledTitle>{information.label}</Styled.StyledTitle>
+                <Styled.StyledTitle height="20px">{information.label}</Styled.StyledTitle>
                 <Styled.StyledText>{information.value}</Styled.StyledText>
               </Styled.StyledRowsCardInformations>
             })}

@@ -31,8 +31,8 @@ export const StyledTitle = styled(Text)`
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    margin-top: 4px;
-    height: 20px;
+    margin-top: 3px;
+    height: ${props => props.height};
     text-align: ${props => props.center ? 'center' : 'start'};
 `;
 
@@ -46,6 +46,8 @@ export const StyledText = styled(Text)`
 export const StyledImage = styled(Image)`
     height: ${props => props.height};
     width: ${props => props.width};
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 export const StyledCardInformations = styled(View)`
