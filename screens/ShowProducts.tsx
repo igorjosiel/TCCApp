@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Text, View } from '../components/Themed';
+import { View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import * as Styled from './components';
 import { Card } from 'react-native-elements';
@@ -35,12 +34,11 @@ useEffect(() => {
     <Styled.StyledScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.StyledCard key={index} height="170px" width="92%" onStartShouldSetResponder={() => navigation.navigate('InformationProduct')}>
+      return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct')}>
         <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
-        <Card.Divider/>
         <View>
           <Card.Image
-            style={{height: '100px', paddingTop: 0}}
+            style={{height: '120px', marginBottom: 0}}
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.StyledText>{product.description}</Styled.StyledText>
