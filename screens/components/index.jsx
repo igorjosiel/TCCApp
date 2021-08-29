@@ -21,7 +21,7 @@ export const StyledScreenShowCards = styled(View)`
     background: #87CEEB;
 `;
 
-export const StyledTitle = styled(View)`
+export const StyledTitle = styled(Text)`
     color: rgb(67, 72, 77);
     background-color: ${background};
     text-transform: uppercase;

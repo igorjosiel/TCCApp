@@ -35,10 +35,10 @@ useEffect(() => {
     <Styled.StyledScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.StyledCard height="170px" width="92%" onStartShouldSetResponder={() => navigation.navigate('InformationProduct')}>
+      return (<Styled.StyledCard key={index} height="170px" width="92%" onStartShouldSetResponder={() => navigation.navigate('InformationProduct')}>
         <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
         <Card.Divider/>
-        <View key={index}>
+        <View>
           <Card.Image
             style={{height: '100px', paddingTop: 0}}
             source={require("../assets/images/arroz.jpg")}
