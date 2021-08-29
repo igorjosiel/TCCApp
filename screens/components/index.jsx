@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
 import { TouchableOpacity } from "react-native";
+import { Image } from 'react-native';
 
 const background = "#FFF";
 
@@ -39,4 +40,9 @@ export const StyledText = styled(Text)`
     font-size: 14px;
     background-color: ${background};
     margin-top: 3px;
+`;
+
+export const StyledImage = styled(Image)`
+    height: ${props => props.height};
+    width: ${props => props.width};
 `;

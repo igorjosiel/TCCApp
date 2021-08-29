@@ -37,8 +37,8 @@ useEffect(() => {
       return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct')}>
         <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
         <View>
-          <Card.Image
-            style={{height: '120px', marginBottom: 0}}
+          <Styled.StyledImage
+            height="120px" width="100%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.StyledText>{product.description}</Styled.StyledText>
