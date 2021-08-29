@@ -6,7 +6,7 @@ import * as Styled from './components';
 import { Card } from 'react-native-elements';
 import {getProducts} from '../services';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function ShowProducts({ navigation }: RootTabScreenProps<'TabOne'>) {
   const products = [{
     name:"arroz",
     price: "30",
@@ -35,7 +35,7 @@ useEffect(() => {
     <Styled.StyledScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.StyledCard>
+      return (<Styled.StyledCard height="170px" width="92%">
         <Styled.StyledTitle>{product.name}</Styled.StyledTitle>
         <Card.Divider/>
         <View key={index}>
@@ -53,21 +53,3 @@ useEffect(() => {
     </Styled.StyledScreenShowCards>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: ''
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});

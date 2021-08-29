@@ -8,11 +8,10 @@ export const StyledCard = styled(View)`
     border-color: rgba(0, 0, 0, 0.12);
     border-width: 1px;
     box-shadow: rgb(0, 0, 0 / 20%) 0px 0px 1px;
-    height: 170px;
+    height: ${props => props.height};
     margin-top: 15px;
     border-radius: 5px;
-    width: 92%;
-    transform: scale(1);
+    width: ${props => props.width};
 `;
 
 export const StyledScreenShowCards = styled(View)`
