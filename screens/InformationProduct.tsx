@@ -17,7 +17,7 @@ const informationsProduct = [{label: 'Produto', value: product.name},
                              {label: 'Preço', value: formatMoney(product.price)},
                              {label: 'Código de Barras', value: product.barcode}];
 
-const InformationProduct = () => (
+const InformationProduct = ({navigation}) => (
   <Styled.StyledScreenShowCards>
     <Styled.StyledCard height="545px" width="92%">
       <Styled.StyledTitle center={true} height="28px">arroz</Styled.StyledTitle>
@@ -35,7 +35,7 @@ const InformationProduct = () => (
             })}
             <Styled.StyledContainerButton>
               <Button title="Voltar" color="#00BFFF"
-                onPress={() => console.log('Simple Button pressed')}></Button>
+                onPress={() => navigation.navigate('ShowProducts')}></Button>
             </Styled.StyledContainerButton>
           </Styled.StyledCardInformations>
         </View>

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
-import { TouchableOpacity, Button } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Image } from 'react-native';
 
 
