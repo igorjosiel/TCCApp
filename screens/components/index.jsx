@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
 import { TouchableOpacity, TextInput, Image, Pressable } from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const background = "#FFF";
 const defaultCard = `
@@ -22,7 +23,11 @@ export const CardHomeScreen = styled(View)`
     ${defaultCard};
     height: ${props => props.height};
     width: ${props => props.width};
-    margin-top: 20px !important;
+    margin-top: 30px !important;
+`;
+
+export const IconButton = styled(Icon)`
+    margin-right: 5px;
 `;
 
 export const ScreenShowCards = styled(View)`
@@ -34,7 +39,7 @@ export const ScreenShowCards = styled(View)`
 `;
 
 export const Button = styled(Pressable)`
-    width: 80%;
+    width: 70%;
     height: 30;
     background: #00BFFF;
     border-radius: 5;
@@ -43,7 +48,7 @@ export const Button = styled(Pressable)`
 `;
 
 export const TextButton = styled(Text)`
-    color: white;
+    color: black;
     text-transform: uppercase;
     margin-top: auto;
     margin-bottom: auto;

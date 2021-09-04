@@ -18,9 +18,17 @@ const ReadBarCode = ({navigation}) => {
         // value=
         placeholder="Digite aqui..."
       />
-
     <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => console.log("Foi")}>
-        <Styled.TextButton>Pesquisar</Styled.TextButton>
+        <Styled.TextButton>
+            <Styled.IconButton name="search" size={15} color="black" />
+            Pesquisar
+        </Styled.TextButton>
+    </Styled.Button>
+    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => console.log("Foi")}>
+        <Styled.TextButton>
+            <Styled.IconButton name="camera" size={15} color="black" />
+            Ligar a câmera
+        </Styled.TextButton>
     </Styled.Button>
   </Styled.ScreenShowCards>
 }
