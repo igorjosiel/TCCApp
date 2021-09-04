@@ -17,29 +17,29 @@ const InformationProduct = ({navigation, route}) => {
       {label: 'Código de Barras', value: barcode}]);
   }, []);
 
-  return <Styled.StyledScreenShowCards>
-    <Styled.StyledCard height="545px" width="92%">
-      <Styled.StyledTitle center={true} height="28px">arroz</Styled.StyledTitle>
+  return <Styled.ScreenShowCards>
+    <Styled.Card height="545px" width="92%">
+      <Styled.Title center={true} height="28px">arroz</Styled.Title>
       <View>
-          <Styled.StyledImage
+          <Styled.DefaultImage
             height="240px" width="90%"
             source={require("../assets/images/arroz.jpg")}
           />
-          <Styled.StyledCardInformations>
+          <Styled.CardInformations>
             {informationsProduct && informationsProduct.map((information, index) => {
-              return <Styled.StyledRowsCardInformations key={index}>
-                <Styled.StyledTitle height="20px">{information.label}</Styled.StyledTitle>
-                <Styled.StyledText>{information.value}</Styled.StyledText>
-              </Styled.StyledRowsCardInformations>
+              return <Styled.RowsCardInformations key={index}>
+                <Styled.Title height="20px">{information.label}</Styled.Title>
+                <Styled.DefaultText>{information.value}</Styled.DefaultText>
+              </Styled.RowsCardInformations>
             })}
-            <Styled.StyledContainerButton>
+            <Styled.ContainerButton>
               <Button title="Voltar" color="#00BFFF"
                 onPress={() => navigation.navigate('ShowProducts')}></Button>
-            </Styled.StyledContainerButton>
-          </Styled.StyledCardInformations>
+            </Styled.ContainerButton>
+          </Styled.CardInformations>
         </View>
-    </Styled.StyledCard>
-  </Styled.StyledScreenShowCards>
+    </Styled.Card>
+  </Styled.ScreenShowCards>
 }
 
 

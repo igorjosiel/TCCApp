@@ -29,22 +29,22 @@ useEffect(() => {
 }, []);
 
   return (
-    <Styled.StyledScreenShowCards>
+    <Styled.ScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
-        <Styled.StyledTitle center={true} height="20px">{product.name}</Styled.StyledTitle>
+      return (<Styled.Card key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
+        <Styled.Title center={true} height="20px">{product.name}</Styled.Title>
         <View>
-          <Styled.StyledImage
+          <Styled.DefaultImage
             height="120px" width="100%"
             source={require("../assets/images/arroz.jpg")}
           />
-          <Styled.StyledText>{product.description}</Styled.StyledText>
+          <Styled.DefaultText>{product.description}</Styled.DefaultText>
         </View>
-        </Styled.StyledCard>
+        </Styled.Card>
       );
     })
   }
-    </Styled.StyledScreenShowCards>
+    </Styled.ScreenShowCards>
   );
 }

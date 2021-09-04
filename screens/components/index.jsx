@@ -1,23 +1,32 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, TextInput } from "react-native";
 import { Image } from 'react-native';
 
-
 const background = "#FFF";
-
-export const StyledCard = styled(TouchableOpacity)`
+const defaultCard = `
     background-color: ${background};
     border-color: rgba(0, 0, 0, 0.12);
     border-width: 1px;
     box-shadow: rgb(0, 0, 0 / 20%) 0px 0px 1px;
-    height: ${props => props.height};
     margin-top: 15px;
     border-radius: 6px;
+`;
+
+export const Card = styled(TouchableOpacity)`
+    ${defaultCard};
+    height: ${props => props.height};
     width: ${props => props.width};
 `;
 
-export const StyledScreenShowCards = styled(View)`
+export const CardHomeScreen = styled(View)`
+    ${defaultCard};
+    height: ${props => props.height};
+    width: ${props => props.width};
+    margin-top: 30px !important;
+`;
+
+export const ScreenShowCards = styled(View)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +34,15 @@ export const StyledScreenShowCards = styled(View)`
     height: 100%;
 `;
 
-export const StyledTitle = styled(Text)`
+export const Input = styled(TextInput)`
+    height: 30;
+    width: 80%;
+    border-width: 1;
+    background-color: white;
+    margin-top: 30;
+`;
+
+export const Title = styled(Text)`
     color: rgb(67, 72, 77);
     background-color: ${background};
     text-transform: uppercase;
@@ -36,21 +53,27 @@ export const StyledTitle = styled(Text)`
     text-align: ${props => props.center ? 'center' : 'start'};
 `;
 
-export const StyledText = styled(Text)`
+export const DefaultText = styled(Text)`
     text-align: center;
     font-size: 14px;
     background-color: ${background};
     margin-top: 3px;
 `;
 
-export const StyledImage = styled(Image)`
+export const TextHomeScreen = styled(DefaultText)`
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+`;
+
+export const DefaultImage = styled(Image)`
     height: ${props => props.height};
     width: ${props => props.width};
     margin-left: auto;
     margin-right: auto;
 `;
 
-export const StyledCardInformations = styled(View)`
+export const CardInformations = styled(View)`
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
@@ -58,13 +81,13 @@ export const StyledCardInformations = styled(View)`
     height: 200px;
 `;
 
-export const StyledRowsCardInformations = styled(View)`
+export const RowsCardInformations = styled(View)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
 `;
 
-export const StyledContainerButton = styled(View)`
+export const ContainerButton = styled(View)`
     margin-top: 22px;
 `;
