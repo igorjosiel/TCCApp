@@ -25,11 +25,4 @@ const ReadBarCode = ({navigation}) => {
   </Styled.ScreenShowCards>
 }
 
-const styles = StyleSheet.create({
-    input: {
-      height: 30,
-      width: '100%'
-    },
-  });
-
 export default ReadBarCode;
