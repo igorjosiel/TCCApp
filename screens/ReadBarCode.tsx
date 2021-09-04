@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet, Button, Text } from 'react-native';
 import * as Styled from './components';
 
 const messageOne = "Olá! Desfrute do nosso app. Um aplicativo desenvolvido para você buscar as informações dos produtos que precisa de forma fácil e eficiente."
@@ -18,7 +18,18 @@ const ReadBarCode = ({navigation}) => {
         // value=
         placeholder="Digite aqui..."
       />
+
+    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => console.log("Foi")}>
+        <Styled.TextButton>Pesquisar</Styled.TextButton>
+    </Styled.Button>
   </Styled.ScreenShowCards>
 }
+
+const styles = StyleSheet.create({
+    input: {
+      height: 30,
+      width: '100%'
+    },
+  });
 
 export default ReadBarCode;
