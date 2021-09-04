@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Button } from 'react-native';
 import * as Styled from './components';
 import formatMoney from '../utils/formatMoney';
@@ -11,14 +11,25 @@ const product = {
   barcode:"47575757585"
 };
 
-const informationsProduct = [{label: 'Produto', value: product.name},
-                             {label: 'Descrição', value: product.description},
-                             {label: 'Categoria', value: product.category},
-                             {label: 'Preço', value: formatMoney(product.price)},
-                             {label: 'Código de Barras', value: product.barcode}];
+// useEffect(() => {
+// console.log("Routes:");
+// }, []);
 
-const InformationProduct = ({navigation}) => (
-  <Styled.StyledScreenShowCards>
+const InformationProduct = ({navigation, route}) => {
+  const [informationsProduct, setInformationsProduct] = useState([]);
+
+  useEffect(() => {
+    const { name, price, description, category, barcode } = route.params;
+    
+    setInformationsProduct([
+      {label: 'Produto', value: name},
+      {label: 'Descrição', value: description},
+      {label: 'Categoria', value: category},
+      {label: 'Preço', value: formatMoney(price)},
+      {label: 'Código de Barras', value: barcode}]);
+  }, []);
+
+  return <Styled.StyledScreenShowCards>
     <Styled.StyledCard height="545px" width="92%">
       <Styled.StyledTitle center={true} height="28px">arroz</Styled.StyledTitle>
       <View>
@@ -41,7 +52,7 @@ const InformationProduct = ({navigation}) => (
         </View>
     </Styled.StyledCard>
   </Styled.StyledScreenShowCards>
-);
+}
 
 
 export default InformationProduct;

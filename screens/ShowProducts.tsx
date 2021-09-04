@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import { View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
 import * as Styled from './components';
 import {getProducts} from '../services';
 
-export default function ShowProducts({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function ShowProducts({ navigation }) {
   const products = [{
     name:"arroz",
     price: "30",
@@ -33,7 +32,7 @@ useEffect(() => {
     <Styled.StyledScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct')}>
+      return (<Styled.StyledCard key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
         <Styled.StyledTitle center={true} height="20px">{product.name}</Styled.StyledTitle>
         <View>
           <Styled.StyledImage
