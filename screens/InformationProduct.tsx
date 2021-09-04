@@ -3,18 +3,6 @@ import { View, Button } from 'react-native';
 import * as Styled from './components';
 import formatMoney from '../utils/formatMoney';
 
-const product = {
-  name:"arroz",
-  price: "30",
-  description:"arroz Tio João",
-  category: "food",
-  barcode:"47575757585"
-};
-
-// useEffect(() => {
-// console.log("Routes:");
-// }, []);
-
 const InformationProduct = ({navigation, route}) => {
   const [informationsProduct, setInformationsProduct] = useState([]);
 
