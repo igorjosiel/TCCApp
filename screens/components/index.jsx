@@ -23,7 +23,7 @@ export const CardHomeScreen = styled(View)`
     ${defaultCard};
     height: ${props => props.height};
     width: ${props => props.width};
-    margin-top: 30px !important;
+    margin-top: 40px !important;
 `;
 
 export const IconButton = styled(Icon)`
@@ -56,8 +56,8 @@ export const TextButton = styled(Text)`
 `;
 
 export const Input = styled(TextInput)`
-    height: 30;
-    width: 80%;
+    height: 35;
+    width: 70%;
     border-width: 1;
     background-color: white;
     margin-top: 30;
