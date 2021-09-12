@@ -22,6 +22,7 @@ const ReadBarCode = ({navigation}) => {
     <Styled.Input
         onChangeText={(text) => setSearch(text)}
         value={search}
+        maxLength={!isNaN(search) ? 13 : 25}
         placeholder="Digite aqui..."
       />
     <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => console.log("Search: ", search)}>
