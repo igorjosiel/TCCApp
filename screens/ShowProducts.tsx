@@ -32,11 +32,11 @@ useEffect(() => {
     <Styled.ScreenShowCards>
       {
     products && products.map((product, index) => {
-      return (<Styled.Card key={index} height="170px" width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
-        <Styled.Title center={true} height="20px">{product.name}</Styled.Title>
+      return (<Styled.Card key={index} height={170} width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
+        <Styled.Title center={true} height="20">{product.name}</Styled.Title>
         <View>
           <Styled.DefaultImage
-            height="120px" width="100%"
+            height={120} width="100%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.DefaultText>{product.description}</Styled.DefaultText>

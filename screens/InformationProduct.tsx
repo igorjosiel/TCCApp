@@ -18,17 +18,17 @@ const InformationProduct = ({navigation, route}) => {
   }, []);
 
   return <Styled.ScreenShowCards>
-    <Styled.Card height="545px" width="92%">
-      <Styled.Title center={true} height="28px">arroz</Styled.Title>
+    <Styled.Card height="545" width="92%">
+      <Styled.Title center={true} height="28">arroz</Styled.Title>
       <View>
           <Styled.DefaultImage
-            height="240px" width="90%"
+            height="240" width="90%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.CardInformations>
             {informationsProduct && informationsProduct.map((information, index) => {
               return <Styled.RowsCardInformations key={index}>
-                <Styled.Title height="20px">{information.label}</Styled.Title>
+                <Styled.Title height="20">{information.label}</Styled.Title>
                 <Styled.DefaultText>{information.value}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}

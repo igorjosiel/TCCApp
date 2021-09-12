@@ -8,11 +8,15 @@ const messageTwo = "Digite o código de barras ou o nome do produto no campo aba
 const ReadBarCode = ({navigation}) => {
   const [search, setSearch] = useState('');
 
+  const onpenCamera = () => {
+    return <OpenCamera></OpenCamera>
+  }
+
   return <Styled.ScreenShowCards>
-    <Styled.CardHomeScreen disabled={false} height="170px" width="80%">
+    <Styled.CardHomeScreen disabled={false} height={170} width="80%">
         <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
-    <Styled.CardHomeScreen height="130px" width="80%">
+    <Styled.CardHomeScreen height={130} width="80%">
         <Styled.TextHomeScreen>{messageTwo}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
     <Styled.Input
@@ -26,7 +30,7 @@ const ReadBarCode = ({navigation}) => {
             Pesquisar
         </Styled.TextButton>
     </Styled.Button>
-    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() =>{return <OpenCamera></OpenCamera>}}>
+    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => onpenCamera()}>
         <Styled.TextButton>
             <Styled.IconButton name="camera" size={15} color="black" />
             Ligar a câmera
