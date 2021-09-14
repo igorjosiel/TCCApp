@@ -1,15 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import * as Styled from './components';
-import OpenCamera from './OpenCamera';
+import ModalInformation from './ModalInformation';
 
 const messageOne = "Olá! Desfrute do nosso app. Um aplicativo desenvolvido para você buscar as informações dos produtos que precisa de forma fácil e eficiente."
 const messageTwo = "Digite o código de barras ou o nome do produto no campo abaixo ou capture o mesmo com a câmera do seu celular.";
+const messageModal = "Por favor, digite o código de barras ou o nome do produto!";
 
 const ReadBarCode = ({navigation}) => {
   const [search, setSearch] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
 
   const searchBarCode = () => {
-    if(search && search.length > 0) navigation.navigate('ShowProducts', search);
+    if(search.length > 0) navigation.navigate('ShowProducts', search);
+    else setModalVisible(true);
   }
 
   const onpenCamera = () => {
@@ -17,6 +20,12 @@ const ReadBarCode = ({navigation}) => {
   }
 
   return <Styled.ScreenShowCards>
+    {console.log("Foi: ", modalVisible)}
+    {modalVisible ? <ModalInformation
+      openModal={modalVisible}
+      closeModal={() => setModalVisible(!modalVisible)}
+      message={messageModal}
+    /> : null}
     <Styled.CardHomeScreen disabled={false} height={170} width="80%">
         <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
