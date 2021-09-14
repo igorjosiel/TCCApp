@@ -7,7 +7,6 @@ export default function App() {
   const [type, setType] = useState(Camera.Constants.Type.back);
 
   useEffect(() => {
-    console.log("IGOR CHEGOU AQUI!!");
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === 'granted');

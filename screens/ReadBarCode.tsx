@@ -8,8 +8,12 @@ const messageTwo = "Digite o código de barras ou o nome do produto no campo aba
 const ReadBarCode = ({navigation}) => {
   const [search, setSearch] = useState('');
 
+  const searchBarCode = () => {
+    if(search && search.length > 0) navigation.navigate('ShowProducts', search);
+  }
+
   const onpenCamera = () => {
-    return <OpenCamera></OpenCamera>
+    navigation.navigate('OpenCamera');
   }
 
   return <Styled.ScreenShowCards>
@@ -25,7 +29,7 @@ const ReadBarCode = ({navigation}) => {
         maxLength={!isNaN(search) ? 13 : 25}
         placeholder="Digite aqui..."
       />
-    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => console.log("Search: ", search)}>
+    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => searchBarCode()}>
         <Styled.TextButton>
             <Styled.IconButton name="search" size={15} color="black" />
             Pesquisar
