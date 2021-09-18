@@ -8,12 +8,14 @@ const defaultCard = `
     background-color: ${background};
     border-color: rgba(0, 0, 0, 0.12);
     border-width: 1;
-    margin-top: 15;
+    margin-top: 10;
     border-radius: 6;
 `;
 
 export const Card = styled(TouchableOpacity)`
     ${defaultCard};
+    margin-left: ${props => props.marginLeft ? props.marginLeft : 0};
+    margin-bottom: 5;
     height: ${props => props.height ? props.height : 150};
     width: ${props => props.width ? props.width : 150};
 `;

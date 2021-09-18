@@ -52,23 +52,22 @@ useEffect(() => {
 
   return (
     <Styled.ScreenShowCards>
-      <ScrollView>
-      {
-    products && products.map((product, index) => {
-      return (<Styled.Card key={index} height={170} width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
-        <Styled.Title center={true} height="20">{product.name}</Styled.Title>
-        <View>
-          <Styled.DefaultImage
-            height={120} width="100%"
-            source={require("../assets/images/arroz.jpg")}
-          />
-          <Styled.DefaultText>{product.description}</Styled.DefaultText>
-        </View>
-        </Styled.Card>
-      );
-    })
-  }
-  </ScrollView>
+      <ScrollView style={{width:"100%"}} centerContent={true} showsVerticalScrollIndicator={false}>
+      {products && products.map((product, index) => {
+        return (<Styled.Card key={index} height={170} width="92%" marginLeft="15" onPress={() => navigation.navigate('InformationProduct', product)}>
+          <Styled.Title center={true} height="20">{product.name}</Styled.Title>
+          <View>
+            <Styled.DefaultImage
+              height={120} width="100%"
+              source={require("../assets/images/arroz.jpg")}
+            />
+            <Styled.DefaultText>{product.description}</Styled.DefaultText>
+          </View>
+          </Styled.Card>
+        );
+      })
+    }
+    </ScrollView>
     </Styled.ScreenShowCards>
   );
 }
