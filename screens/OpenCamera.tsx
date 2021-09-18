@@ -22,7 +22,7 @@ export default function App() {
   return (
     <View>
       <Camera type={type}>
-        <View>
+        <View style={{height: "50%", width: "50%"}}>
           <TouchableOpacity
             // style={styles.button}
             onPress={() => {
@@ -32,7 +32,6 @@ export default function App() {
                   : Camera.Constants.Type.back
               );
             }}>
-            <Text> Flip </Text>
           </TouchableOpacity>
         </View>
       </Camera>

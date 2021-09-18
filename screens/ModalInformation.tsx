@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Alert, Modal, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import * as Styled from './components';
 
 export default function ModalInformation(props) {
-    console.log("Route: ", props);
     const { openModal, closeModal, message } = props;
 
     return (
-      <View style={styles.centeredView}>
+      <View style={{marginBottom: 'auto', marginTop: 'auto'}}>
         <Modal
           animationType="fade"
           transparent={true}
@@ -14,59 +15,28 @@ export default function ModalInformation(props) {
           onRequestClose={() => {
             Alert.alert('Modal has been closed.');
           }}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>{message}</Text>
-  
-              <TouchableHighlight
-                style={{ ...styles.openButton, backgroundColor: '#2196F3' }}
-                onPress={() => {
-                  closeModal()
-                }}>
-                <Text style={styles.textStyle}>Hide Modal</Text>
-              </TouchableHighlight>
+          <View style={{height: 300, backgroundColor: 'white', width: "80%", marginTop: 'auto', marginBottom: 'auto',marginLeft: 'auto', marginRight: 'auto', borderRadius: 10}}>
+            <View>
+              <View style={{height: '115%', alignItems: 'center'}}>
+                <Icon name="exclamation" size={75} style={{marginBottom: 'auto', marginTop: 'auto'}} color="#000" />
+              </View>
+              <View style={{height: '65%', alignItems: 'center'}}>
+              <Text style={{textAlign: 'center', height: '100%', width: "90%", marginLeft: 'auto', marginRight: 'auto', fontWeight: 'bold'}}>{message}</Text>
+              </View>
+              <View style={{height: '45%', alignItems: 'center', width: '100%'}}>
+                <TouchableHighlight
+                  style={{width: "50%", backgroundColor: '#00BFFF', height: '50%', marginRight: 'auto', marginLeft: 'auto', borderRadius: 5}}
+                  onPress={() => {
+                    closeModal()
+                  }}>
+                  <Styled.TextButton>
+                    Voltar
+                  </Styled.TextButton>
+                </TouchableHighlight>
+              </View>
             </View>
           </View>
         </Modal>
       </View>
     );
   }
-  
-  const styles = StyleSheet.create({
-    centeredView: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 22,
-    },
-    modalView: {
-      margin: 20,
-      backgroundColor: 'white',
-      borderRadius: 20,
-      padding: 35,
-      alignItems: 'center',
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5,
-    },
-    openButton: {
-      backgroundColor: '#F194FF',
-      borderRadius: 20,
-      padding: 10,
-      elevation: 2,
-    },
-    textStyle: {
-      color: 'white',
-      fontWeight: 'bold',
-      textAlign: 'center',
-    },
-    modalText: {
-      marginBottom: 15,
-      textAlign: 'center',
-    },
-  });
