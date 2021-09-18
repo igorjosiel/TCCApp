@@ -10,6 +10,7 @@ const ReadBarCode = ({navigation}) => {
 
   const searchBarCode = () => {
     if(search.length > 0) navigation.navigate('ShowProducts', search);
+    else navigation.navigate('PageError');
   }
 
   const onpenCamera = () => {

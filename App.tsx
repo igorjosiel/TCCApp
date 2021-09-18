@@ -5,6 +5,7 @@ import ShowProducts from './screens/ShowProducts';
 import InformationProduct from './screens/InformationProduct';
 import ReadBarCode from './screens/ReadBarCode';
 import OpenCamera from './screens/OpenCamera';
+import PageError from './screens/PageError';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const App = () => {
         <Stack.Screen name="ShowProducts" component={ShowProducts} />
         <Stack.Screen name="InformationProduct" component={InformationProduct} />
         <Stack.Screen name="OpenCamera" component={OpenCamera} />
+        <Stack.Screen name="PageError" component={PageError} />
       </Stack.Navigator>
     </NavigationContainer>
   );
