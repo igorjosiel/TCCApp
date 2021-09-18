@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { View } from '../components/Themed';
 import * as Styled from './components';
+import { ScrollView } from 'react-native';
 import {getProducts} from '../services';
 
 export default function ShowProducts({ navigation }) {
@@ -22,6 +23,27 @@ export default function ShowProducts({ navigation }) {
   description:"Tia Nastácia",
   category: "comida",
   barcode:"47575757585"
+},
+{
+  name:"bolo",
+  price: "30",
+  description:"Tia Nastácia",
+  category: "comida",
+  barcode:"47575757585"
+},
+{
+  name:"bolo",
+  price: "30",
+  description:"Tia Nastácia",
+  category: "comida",
+  barcode:"47575757585"
+},
+{
+  name:"bolo",
+  price: "30",
+  description:"Tia Nastácia",
+  category: "comida",
+  barcode:"47575757585"
 }];
 
 useEffect(() => {
@@ -30,6 +52,7 @@ useEffect(() => {
 
   return (
     <Styled.ScreenShowCards>
+      <ScrollView>
       {
     products && products.map((product, index) => {
       return (<Styled.Card key={index} height={170} width="92%" onPress={() => navigation.navigate('InformationProduct', product)}>
@@ -45,6 +68,7 @@ useEffect(() => {
       );
     })
   }
+  </ScrollView>
     </Styled.ScreenShowCards>
   );
 }
