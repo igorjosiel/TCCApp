@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
-import { TouchableOpacity, TextInput, Image, Pressable } from "react-native";
+import { TouchableOpacity, TextInput, Image, Pressable, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const background = "#FFF";
@@ -118,4 +118,8 @@ export const RowsCardInformations = styled(View)`
 
 export const ContainerButton = styled(View)`
     margin-top: 22;
+`;
+
+export const Scroll = styled(ScrollView)`
+    width: 100%;
 `;
