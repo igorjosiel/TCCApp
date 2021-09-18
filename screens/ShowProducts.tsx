@@ -8,19 +8,19 @@ export default function ShowProducts({ navigation }) {
     name:"arroz",
     price: "30",
     description:"arroz Tio João",
-    category: "food",
+    category: "comida",
     barcode:"47575757585"
 },{
   name:"chocolate",
   price: "30",
   description:"Nestle",
-  category: "food",
+  category: "comida",
   barcode:"47575757585"
 },{
   name:"bolo",
   price: "30",
   description:"Tia Nastácia",
-  category: "food",
+  category: "comida",
   barcode:"47575757585"
 }];
 

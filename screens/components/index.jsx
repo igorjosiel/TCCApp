@@ -26,8 +26,8 @@ export const CardHomeScreen = styled(View)`
 `;
 
 export const IconButton = styled(Icon)`
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: ${props => props.marginLeft ? props.marginLeft : '3'};
+    margin-right: ${props => props.marginRight ? props.marginRight : '10'};
     margin-top: ${props => props.marginTop ? props.marginTop : 0};
 `;
 
@@ -43,9 +43,11 @@ export const Button = styled(Pressable)`
     width: 70%;
     height: 40;
     background: #00BFFF;
-    border-radius: 5;
+    border-radius: 10;
     text-align: center;
     margin-top: 15;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 export const TextButton = styled(Text)`
@@ -59,7 +61,7 @@ export const TextButton = styled(Text)`
 `;
 
 export const Input = styled(TextInput)`
-    height: 35;
+    height: 40;
     width: 70%;
     border-width: 1;
     background-color: white;
@@ -74,7 +76,7 @@ export const Title = styled(Text)`
     font-weight: bold;
     margin-top: 3;
     height: ${props => props.height ? props.height : 150};
-    text-align: ${props => props.center ? 'center' : 'start'};
+    text-align: ${props => props.center ? 'center' : 'left'};
 `;
 
 export const DefaultText = styled(Text)`

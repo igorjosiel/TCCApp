@@ -32,10 +32,11 @@ const InformationProduct = ({navigation, route}) => {
                 <Styled.DefaultText>{information.value}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
-            <Styled.ContainerButton>
-              <Button title="Voltar" color="#00BFFF"
-                onPress={() => navigation.navigate('ShowProducts')}></Button>
-            </Styled.ContainerButton>
+            <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+              <Styled.TextButton>
+                Voltar
+              </Styled.TextButton>
+            </Styled.Button>
           </Styled.CardInformations>
         </View>
     </Styled.Card>
