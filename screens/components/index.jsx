@@ -22,11 +22,13 @@ export const CardHomeScreen = styled(View)`
     ${defaultCard};
     height: ${props => props.height ? props.height : 150};
     width: ${props => props.width ? props.width : 150};
-    margin-top: 40 !important;
+    margin-top: ${props => props.marginTop ? props.marginTop : 40};
 `;
 
 export const IconButton = styled(Icon)`
-    margin-right: 10;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: ${props => props.marginTop ? props.marginTop : 0};
 `;
 
 export const ScreenShowCards = styled(View)`
