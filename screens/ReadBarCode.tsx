@@ -7,6 +7,11 @@ const messageModal = "Por favor, digite o código de barras ou o nome do produto
 
 const ReadBarCode = ({navigation}) => {
   const [search, setSearch] = useState('');
+  const [showCards, setShowCards] = useState(true);
+
+  useEffect(() => {
+    if(search === "") setShowCards(true);
+  }, [search]);
 
   const searchBarCode = () => {
     if(search.length > 0) navigation.navigate('ShowProducts', search);
@@ -17,15 +22,22 @@ const ReadBarCode = ({navigation}) => {
     navigation.navigate('OpenCamera');
   }
 
+  const changeSearch = (text) => {
+    setShowCards(false);
+    setSearch(text);
+  }
+
   return <Styled.ScreenShowCards>
+    {showCards ?
     <Styled.CardHomeScreen disabled={false} height={170} width="80%">
         <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
-    </Styled.CardHomeScreen>
+    </Styled.CardHomeScreen> : showCards}
+    {showCards ?
     <Styled.CardHomeScreen height={130} width="80%">
         <Styled.TextHomeScreen>{messageTwo}</Styled.TextHomeScreen>
-    </Styled.CardHomeScreen>
+    </Styled.CardHomeScreen> : showCards}
     <Styled.Input
-        onChangeText={(text) => setSearch(text)}
+        onChangeText={(text) => changeSearch(text)}
         value={search}
         maxLength={!isNaN(search) ? 13 : 25}
         placeholder="Digite aqui..."
