@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Styled from './components';
 
-const messageModal = "Por favor, digite o código de barras ou o nome do produto!";
+const PageError = ({navigation, route}) => {
+  const [message, setMessage] = useState('');
 
-const PageError = ({navigation}) => {
+  useEffect(() => {
+    setMessage(route.params.message);
+  });
 
   return <Styled.ScreenShowCards>
     <Styled.CardHomeScreen disabled={false} height={200} width="80%" marginTop='50%'>
       <Styled.IconButton marginTop='15%' name="exclamation" size={50} color="black" marginLeft="auto" marginRight="auto" />
-      <Styled.TextHomeScreen>{messageModal}</Styled.TextHomeScreen>
+      <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
     <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => navigation.navigate('ReadBarCode')}>
         <Styled.TextButton>

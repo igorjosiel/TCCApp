@@ -5,56 +5,17 @@ import { listProducts } from '../services';
 
 export default function ShowProducts({ navigation }) {
   const [products, setProducts] = useState();
+  const [message, setMessage] = useState();
 
-//   const products = [{
-//     name:"arroz",
-//     price: "30",
-//     description:"arroz Tio João",
-//     category: "comida",
-//     barcode:"47575757585"
-// },{
-//   name:"chocolate",
-//   price: "30",
-//   description:"Nestle",
-//   category: "comida",
-//   barcode:"47575757585"
-// },{
-//   name:"bolo",
-//   price: "30",
-//   description:"Tia Nastácia",
-//   category: "comida",
-//   barcode:"47575757585"
-// },
-// {
-//   name:"bolo",
-//   price: "30",
-//   description:"Tia Nastácia",
-//   category: "comida",
-//   barcode:"47575757585"
-// },
-// {
-//   name:"bolo",
-//   price: "30",
-//   description:"Tia Nastácia",
-//   category: "comida",
-//   barcode:"47575757585"
-// },
-// {
-//   name:"bolo",
-//   price: "30",
-//   description:"Tia Nastácia",
-//   category: "comida",
-//   barcode:"47575757585"
-// }];
+  useEffect(() => {
+    const fetchSearchProducts = async () => {
+      const { data, message } = await listProducts();
+      setMessage(message);
+      setProducts(data);
+    }
 
-useEffect(() => {
-  const fetchSearchProducts = async () => {
-    const { data } = await listProducts();
-    setProducts(data);
-  }
-
-  fetchSearchProducts();
-}, []);
+    fetchSearchProducts();
+  }, []);
 
   return (
     <Styled.ScreenShowCards>
