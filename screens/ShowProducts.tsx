@@ -67,7 +67,7 @@ useEffect(() => {
               height={120} width="100%"
               source={require("../assets/images/arroz.jpg")}
             />
-            <Styled.DefaultText>{product.descricao}</Styled.DefaultText>
+            <Styled.DefaultText>{product.description}</Styled.DefaultText>
           </View>
           </Styled.Card>
         );
