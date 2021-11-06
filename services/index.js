@@ -2,8 +2,16 @@ import { http } from './config';
 
 const textUrl = "/products";
 
-export const listProducts = (filter) => {
-    if (filter === undefined) return http.get('/products');
+export const listProducts = async (filter) => {
+    if (filter === undefined) {
+        const { data } = await http.get('/products');
+        
+        return {
+            data: data.data,
+            message: data.message,
+            pagination: data.pagination
+        }
+    }
     else {
         const { name, cpf, ra } = filter;
 
