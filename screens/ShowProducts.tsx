@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { View } from '../components/Themed';
 import * as Styled from './components';
-import {getProducts} from '../services';
+import { listProducts } from '../services';
 
 export default function ShowProducts({ navigation }) {
   const products = [{
@@ -46,7 +46,7 @@ export default function ShowProducts({ navigation }) {
 }];
 
 useEffect(() => {
-  // console.log(getProducts());
+  console.log(listProducts());
 }, []);
 
   return (

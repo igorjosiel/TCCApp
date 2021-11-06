@@ -1,35 +1,24 @@
-// export const getProduct = (callback) => {
-//     fetch("", {
-//         method: "get",
-//         mode: "no-cors",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json',
-//         }
-//     }).then(res => res.json())
-//         .then(
-//             (result) => {
-//                 console.log("Res: ", result)
-//                 if(callback) {
-//                     callback(result)
-//                 }
-//             }
-//         );
+import { http } from './config';
+
+const textUrl = "/products";
+
+export const listProducts = (filter) => {
+    if (filter === undefined) return http.get('/products');
+    else {
+        const { name, cpf, ra } = filter;
+
+        return http.get(`${textUrl}/?name=${name}&cpf=${cpf}&ra=${ra}`);
+    }
+}
+
+// export const createStudent = (params) => {
+//     return http.post(`${textUrl}`, params);
 // }
 
-const endpoint = 'http://localhost:1001/products';
+// export const deleteStudent = (id) => {
+//     return http.delete(`${textUrl}/${id}`);
+// }
 
-export const async getProducts = () => fetch(endpoint, {
-method: 'GET',
-mode: 'no-cors',
-headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin":"*",
-            }
-})
-.then((resp) => resp.json())
-.then(function(response) {
-console.info('fetch()', response);
-return response;
-})
+// export const updateStudent = (id, params) => {
+//     return http.put(`${textUrl}/${id}`, params);
+// }
