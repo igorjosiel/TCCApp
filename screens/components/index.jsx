@@ -52,6 +52,16 @@ export const Button = styled(Pressable)`
     margin-right: auto;
 `;
 
+export const ButtonGoBack = styled(Button)`
+    width: 40% !important;
+    margin-left: 0px;
+    margin-right: 0px;
+`;
+
+export const ButtonBuy = styled(ButtonGoBack)`
+    width: 50% !important;
+`;
+
 export const TextButton = styled(Text)`
     color: black;
     margin-top: auto;
@@ -121,5 +131,12 @@ export const ContainerButton = styled(View)`
 `;
 
 export const Scroll = styled(ScrollView)`
+    width: 100%;
+`;
+
+export const ContainerShowBuyProducts = styled(View)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
 `;

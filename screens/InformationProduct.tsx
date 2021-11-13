@@ -41,11 +41,18 @@ const InformationProduct = ({navigation, route}) => {
                 <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
-            <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
-              <Styled.TextButton>
-                Voltar
-              </Styled.TextButton>
-            </Styled.Button>
+            <Styled.ContainerShowBuyProducts>
+              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+                <Styled.TextButton>
+                  Comprar
+                </Styled.TextButton>
+              </Styled.ButtonBuy>
+              <Styled.ButtonGoBack title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+                <Styled.TextButton>
+                  Voltar
+                </Styled.TextButton>
+              </Styled.ButtonGoBack>
+            </Styled.ContainerShowBuyProducts>
           </Styled.CardInformations>
         </View>
     </Styled.Card>
