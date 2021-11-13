@@ -10,6 +10,9 @@ const App = () => {
     <>
       <NavigationContainer>
         <Tab.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
           tabBarOptions={{
             labelStyle: {fontSize: 18},
             activeTintColor: '#000000',
