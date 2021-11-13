@@ -3,13 +3,15 @@ import { View } from '../components/Themed';
 import * as Styled from './components';
 import { listProducts } from '../services';
 
-export default function ShowProducts({ navigation }) {
+export default function ShowProducts({ navigation, route }) {
   const [products, setProducts] = useState();
   const [message, setMessage] = useState();
 
   useEffect(() => {
+    const valueFilter = route.params;
+
     const fetchSearchProducts = async () => {
-      const { data, message } = await listProducts();
+      const { data, message } = await listProducts(valueFilter);
       setMessage(message);
       setProducts(data);
     }
