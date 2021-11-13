@@ -12,7 +12,10 @@ const Stack = createStackNavigator();
 
 const ReadBarCodeNavigator = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <Stack.Screen
                 name="ReadBarCode"
                 component={ReadBarCode}
@@ -41,7 +44,10 @@ export {ReadBarCodeNavigator}
 
 const ShoppingCartNavigator = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <Stack.Screen
                 name="ShoppingCart"
                 component={ShoppingCart}
