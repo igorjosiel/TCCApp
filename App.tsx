@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ReadBarCodeNavigator, ShoppingCartNavigator } from './CustomNavigation';
+import Icon from "react-native-vector-icons/AntDesign";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,10 +12,10 @@ const App = () => {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={{
-            headerShown: false
+            headerShown: false,
           }}
           tabBarOptions={{
-            labelStyle: {fontSize: 18},
+            labelStyle: {fontSize: 15},
             activeTintColor: '#000000',
             inactiveTintColor: '#808080',
             activeBackgroundColor: '#FFFAFA',
