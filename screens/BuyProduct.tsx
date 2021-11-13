@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 import * as Styled from './components';
 import formatMoney from '../utils/formatMoney';
 import { getOneProduct } from '../services';
@@ -10,20 +10,20 @@ const InformationProduct = ({navigation, route}) => {
 
   useEffect(() => {
     const fetchShowProduct = async () => {
-      const { id } = route.params;
-      const { data, message } = await getOneProduct(id);
-      const { name, price, description, category, barCode } = data;
-
-      setInformationsProduct([
-        {label: 'Produto', value: name},
-        {label: 'Descrição', value: description},
-        {label: 'Categoria', value: category},
-        {label: 'Preço', value: formatMoney(price)},
-        {label: 'Código de Barras', value: barCode}]);
-      setMessage(message);
-    }
-
-    fetchShowProduct();
+        const { idProduct } = route.params;
+        const { data, message } = await getOneProduct(idProduct);
+        const { name, price, description, category, barCode } = data;
+  
+        setInformationsProduct([
+          {label: 'Produto', value: name},
+          {label: 'Descrição', value: description},
+          {label: 'Categoria', value: category},
+          {label: 'Preço', value: formatMoney(price)},
+          {label: 'Código de Barras', value: barCode}]);
+        setMessage(message);
+      }
+  
+      fetchShowProduct();
   }, []);
 
   const verifyField = (information) => {
@@ -50,8 +50,8 @@ const InformationProduct = ({navigation, route}) => {
                 <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
-            <Styled.ContainerShowBuyProducts>
-              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
+            {/* <Styled.ContainerShowBuyProducts>
+              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
                 <Styled.TextButton>
                   Comprar
                 </Styled.TextButton>
@@ -61,12 +61,11 @@ const InformationProduct = ({navigation, route}) => {
                   Voltar
                 </Styled.TextButton>
               </Styled.ButtonGoBack>
-            </Styled.ContainerShowBuyProducts>
+            </Styled.ContainerShowBuyProducts> */}
           </Styled.CardInformations>
         </View>
     </Styled.Card>
   </Styled.ScreenShowCards>
 }
-
 
 export default InformationProduct;
