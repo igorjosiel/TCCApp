@@ -26,7 +26,9 @@ const InformationProduct = ({navigation, route}) => {
 
   return <Styled.ScreenShowCards>
     <Styled.Card height="545" width="92%">
-      <Styled.Title center={true} height="28">{informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}</Styled.Title>
+      <Styled.Title center={true} height="28" uppercase={true}>
+        {informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}
+      </Styled.Title>
       <View>
           <Styled.DefaultImage
             height="240" width="90%"

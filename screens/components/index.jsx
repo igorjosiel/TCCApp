@@ -54,12 +54,12 @@ export const Button = styled(Pressable)`
 
 export const TextButton = styled(Text)`
     color: black;
-    text-transform: uppercase;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
+    font-size: 16;
 `;
 
 export const Input = styled(TextInput)`
@@ -73,7 +73,7 @@ export const Input = styled(TextInput)`
 export const Title = styled(Text)`
     color: rgb(67, 72, 77);
     background-color: ${background};
-    text-transform: uppercase;
+    text-transform: ${props => props.uppercase ? 'uppercase' : ''};
     font-size: 14;
     font-weight: bold;
     margin-top: 3;

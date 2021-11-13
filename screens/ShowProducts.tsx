@@ -24,10 +24,11 @@ export default function ShowProducts({ navigation, route }) {
       <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {products && products.map((product, index) => {
         return (<Styled.Card key={index} height={170} width="92%" marginLeft="15" onPress={() => navigation.navigate('InformationProduct', product)}>
-          <Styled.Title center={true} height="20">{product.name}</Styled.Title>
+          <Styled.Title uppercase={true} center={true} height="20">{product.name}</Styled.Title>
           <View>
             <Styled.DefaultImage
-              height={120} width="100%"
+              height={120}
+              width="100%"
               source={require("../assets/images/arroz.jpg")}
             />
             <Styled.DefaultText>{product.description}</Styled.DefaultText>
