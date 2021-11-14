@@ -62,6 +62,20 @@ export const ButtonBuy = styled(ButtonGoBack)`
     width: 50% !important;
 `;
 
+export const ButtonSymbols = styled(Button)`
+    width: 30% !important;
+    height: 25;
+    opacity: ${props => props.disabled ? '0.3' : '1.0'};
+`;
+
+export const ContainerSymbols = styled(View)`
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    border-radius: 180px;
+    width: 50% !important;
+`;
+
 export const TextButton = styled(Text)`
     color: black;
     margin-top: auto;
@@ -70,6 +84,13 @@ export const TextButton = styled(Text)`
     margin-right: auto;
     font-weight: bold;
     font-size: 16;
+`;
+
+export const TextButtonSymbol = styled(TextButton)`
+    font-size: 18;
+    font-weight: unset;
+    font-weight: unset;
+    margin-bottom: 0px;
 `;
 
 export const Input = styled(TextInput)`
@@ -96,6 +117,10 @@ export const DefaultText = styled(Text)`
     font-size: 14;
     background-color: ${background};
     margin-top: 3;
+`;
+
+export const TextAmountProduct = styled(DefaultText)`
+    font-size: 18;
 `;
 
 export const TextHomeScreen = styled(DefaultText)`
