@@ -38,6 +38,7 @@ export const ScreenShowCards = styled(View)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: ${props => props.paddingTop ? props.paddingTop : '3%'};
     background: #87CEEB;
     height: 100%;
 `;
@@ -105,7 +106,7 @@ export const Input = styled(TextInput)`
 export const Title = styled(Text)`
     color: rgb(67, 72, 77);
     background-color: ${background};
-    text-transform: ${props => props.uppercase ? 'uppercase' : ''};
+    text-transform: ${props => props.uppercase ? 'uppercase' : 'capitalize'};
     font-size: 14;
     font-weight: bold;
     margin-top: 3;

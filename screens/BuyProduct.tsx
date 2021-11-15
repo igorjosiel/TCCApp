@@ -42,7 +42,7 @@ const InformationProduct = ({navigation, route}) => {
     return value;
   }
 
-  return <Styled.ScreenShowCards>
+  return <Styled.ScreenShowCards paddingTop="8%">
     <Styled.Card height="565" width="92%">
       <Styled.Title center={true} height="28" uppercase={true}>
         {informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}

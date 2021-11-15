@@ -27,7 +27,7 @@ const ReadBarCode = ({navigation}) => {
     setSearch(text);
   }
 
-  return <Styled.ScreenShowCards>
+  return <Styled.ScreenShowCards paddingTop="0%">
     {showCards ?
     <Styled.CardHomeScreen disabled={false} height={170} width="80%">
         <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>

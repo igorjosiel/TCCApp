@@ -20,7 +20,7 @@ export default function ShowProducts({ navigation, route }) {
   }, []);
 
   return (
-    <Styled.ScreenShowCards>
+    <Styled.ScreenShowCards paddingTop="5%">
       <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {products && products.map((product, index) => {
         return (<Styled.Card key={index} height={170} width="92%" marginLeft="15" onPress={() => navigation.navigate('InformationProduct', product)}>
