@@ -1,20 +1,29 @@
 import React, {useEffect, useState} from 'react';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 import * as Styled from './components';
 import formatMoney from '../utils/formatMoney';
+import { getOneProduct } from '../services';
 
 const InformationProduct = ({navigation, route}) => {
   const [informationsProduct, setInformationsProduct] = useState([]);
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    const { name, price, description, category, barCode } = route.params;
-    
-    setInformationsProduct([
-      {label: 'Produto', value: name},
-      {label: 'Descrição', value: description},
-      {label: 'Categoria', value: category},
-      {label: 'Preço', value: formatMoney(price)},
-      {label: 'Código de Barras', value: barCode}]);
+    const fetchShowProduct = async () => {
+      const { id } = route.params;
+      const { data, message } = await getOneProduct(id);
+      const { name, price, description, category, barCode } = data;
+
+      setInformationsProduct([
+        {label: 'Produto', value: name},
+        {label: 'Descrição', value: description},
+        {label: 'Categoria', value: category},
+        {label: 'Preço', value: formatMoney(price)},
+        {label: 'Código de Barras', value: barCode}]);
+      setMessage(message);
+    }
+
+    fetchShowProduct();
   }, []);
 
   const verifyField = (information) => {
@@ -26,7 +35,9 @@ const InformationProduct = ({navigation, route}) => {
 
   return <Styled.ScreenShowCards>
     <Styled.Card height="545" width="92%">
-      <Styled.Title center={true} height="28">{informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}</Styled.Title>
+      <Styled.Title center={true} height="28" uppercase={true}>
+        {informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}
+      </Styled.Title>
       <View>
           <Styled.DefaultImage
             height="240" width="90%"
@@ -39,11 +50,18 @@ const InformationProduct = ({navigation, route}) => {
                 <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
-            <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
-              <Styled.TextButton>
-                Voltar
-              </Styled.TextButton>
-            </Styled.Button>
+            <Styled.ContainerShowBuyProducts>
+              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
+                <Styled.TextButton>
+                  Comprar
+                </Styled.TextButton>
+              </Styled.ButtonBuy>
+              <Styled.ButtonGoBack title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+                <Styled.TextButton>
+                  Voltar
+                </Styled.TextButton>
+              </Styled.ButtonGoBack>
+            </Styled.ContainerShowBuyProducts>
           </Styled.CardInformations>
         </View>
     </Styled.Card>

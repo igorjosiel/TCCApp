@@ -11,3 +11,12 @@ export const listProducts = async (filter) => {
         pagination: data.pagination
     }
 }
+
+export const getOneProduct = async (id) => {
+    const { data } = await http.get(`/products/${id}`);
+    
+    return {
+        data: data.data,
+        message: data.message
+    }
+}
