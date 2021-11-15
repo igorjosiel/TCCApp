@@ -8,10 +8,10 @@ export default function ShowProducts({ navigation, route }) {
   const [message, setMessage] = useState();
 
   useEffect(() => {
-    const valueFilter = route.params;
+    const { value, typeSearch } = route.params;
 
     const fetchSearchProducts = async () => {
-      const { data, message } = await listProducts(valueFilter);
+      const { data, message } = await listProducts(value, typeSearch);
       setMessage(message);
       setProducts(data);
     }

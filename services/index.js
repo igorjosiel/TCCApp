@@ -2,8 +2,8 @@ import { http } from './config';
 
 const textUrl = "/products";
 
-export const listProducts = async (filter) => {
-    const { data } = await http.get(`/products?filter=${filter}`);
+export const listProducts = async (value, typeSearch) => {
+    const { data } = await http.get(`/products?${typeSearch}=${value}`);
     
     return {
         data: data.data,
