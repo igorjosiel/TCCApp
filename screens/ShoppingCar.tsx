@@ -5,6 +5,6 @@ import { Text } from '../components/Themed';
 
 export default function ShoppingCart() {
   return (
-    <Text />
+    <Text>Deudggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</Text>
   );
 }

@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
 import { TouchableOpacity, TextInput, Image, Pressable, ScrollView } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons';
+import { FontAwesome } from '@expo/vector-icons/';
 
 const background = "#FFF";
 const defaultCard = `
@@ -27,7 +28,7 @@ export const CardHomeScreen = styled(View)`
     margin-top: ${props => props.marginTop ? props.marginTop : 40};
 `;
 
-export const IconButton = styled(Icon)`
+export const IconButton = styled(FontAwesome)`
     margin-left: ${props => props.marginLeft ? props.marginLeft : '3'};
     margin-right: ${props => props.marginRight ? props.marginRight : '10'};
     margin-top: ${props => props.marginTop ? props.marginTop : 0};
