@@ -7,15 +7,22 @@ const InformationProduct = ({navigation, route}) => {
   const [informationsProduct, setInformationsProduct] = useState([]);
 
   useEffect(() => {
-    const { name, price, description, category, barcode } = route.params;
+    const { name, price, description, category, barCode } = route.params;
     
     setInformationsProduct([
       {label: 'Produto', value: name},
       {label: 'Descrição', value: description},
       {label: 'Categoria', value: category},
       {label: 'Preço', value: formatMoney(price)},
-      {label: 'Código de Barras', value: barcode}]);
+      {label: 'Código de Barras', value: barCode}]);
   }, []);
+
+  const verifyField = (information) => {
+    const { label, value } = information;
+
+    if (label === 'Preço') return 'R$ ' + value;
+    return value;
+  }
 
   return <Styled.ScreenShowCards>
     <Styled.Card height="545" width="92%">
@@ -29,7 +36,7 @@ const InformationProduct = ({navigation, route}) => {
             {informationsProduct && informationsProduct.map((information, index) => {
               return <Styled.RowsCardInformations key={index}>
                 <Styled.Title height="20">{information.label}</Styled.Title>
-                <Styled.DefaultText>{information.value}</Styled.DefaultText>
+                <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
             <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
