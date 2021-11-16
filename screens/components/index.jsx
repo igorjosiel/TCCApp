@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
 import { TouchableOpacity, TextInput, Image, Pressable, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { ActivityIndicator } from 'react-native';
 
 const background = "#FFF";
 const defaultCard = `
@@ -122,4 +123,15 @@ export const ContainerButton = styled(View)`
 
 export const Scroll = styled(ScrollView)`
     width: 100%;
+`;
+
+export const ContainerLoading = styled(View)`
+    width: 100%;
+    height: 100%;
+    background-color: rgb(135, 206, 235);
+`;
+
+export const Loading = styled(ActivityIndicator)`
+    width: 100%;
+    height: 100%;
 `;
