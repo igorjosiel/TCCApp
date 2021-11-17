@@ -28,7 +28,7 @@ export const CardHomeScreen = styled(View)`
     margin-top: ${props => props.marginTop ? props.marginTop : 40};
 `;
 
-export const IconButton = styled(Icon)`
+export const IconButton = styled(FontAwesome)`
     margin-left: ${props => props.marginLeft ? props.marginLeft : '3'};
     margin-right: ${props => props.marginRight ? props.marginRight : '10'};
     margin-top: ${props => props.marginTop ? props.marginTop : 0};
@@ -38,6 +38,7 @@ export const ScreenShowCards = styled(View)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: ${props => props.paddingTop ? props.paddingTop : '3%'};
     background: #87CEEB;
     height: 100%;
 `;
@@ -53,14 +54,45 @@ export const Button = styled(Pressable)`
     margin-right: auto;
 `;
 
+export const ButtonGoBack = styled(Button)`
+    width: 40% !important;
+    margin-left: 0px;
+    margin-right: 0px;
+`;
+
+export const ButtonBuy = styled(ButtonGoBack)`
+    width: 50% !important;
+`;
+
+export const ButtonSymbols = styled(Button)`
+    width: 30% !important;
+    height: 25;
+    opacity: ${props => props.disabled ? '0.3' : '1.0'};
+`;
+
+export const ContainerSymbols = styled(View)`
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    border-radius: 180px;
+    width: 50% !important;
+`;
+
 export const TextButton = styled(Text)`
     color: black;
-    text-transform: uppercase;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
+    font-size: 16;
+`;
+
+export const TextButtonSymbol = styled(TextButton)`
+    font-size: 18;
+    font-weight: unset;
+    font-weight: unset;
+    margin-bottom: 0px;
 `;
 
 export const Input = styled(TextInput)`
@@ -74,7 +106,7 @@ export const Input = styled(TextInput)`
 export const Title = styled(Text)`
     color: rgb(67, 72, 77);
     background-color: ${background};
-    text-transform: uppercase;
+    text-transform: ${props => props.uppercase ? 'uppercase' : 'capitalize'};
     font-size: 14;
     font-weight: bold;
     margin-top: 3;
@@ -87,6 +119,10 @@ export const DefaultText = styled(Text)`
     font-size: 14;
     background-color: ${background};
     margin-top: 3;
+`;
+
+export const TextAmountProduct = styled(DefaultText)`
+    font-size: 18;
 `;
 
 export const TextHomeScreen = styled(DefaultText)`

@@ -14,7 +14,7 @@ const ReadBarCode = ({navigation}) => {
   }, [search]);
 
   const searchBarCode = () => {
-    if(search.length > 0) navigation.navigate('ShowProducts', search);
+    if(search.length > 0) navigation.navigate('ShowProducts', { value: search, typeSearch: 'name' });
     else navigation.navigate('PageError', { message: "Por favor, digite o código de barras ou o nome do produto!" });
   }
 
@@ -27,7 +27,7 @@ const ReadBarCode = ({navigation}) => {
     setSearch(text);
   }
 
-  return <Styled.ScreenShowCards>
+  return <Styled.ScreenShowCards paddingTop="0%">
     {showCards ?
     <Styled.CardHomeScreen disabled={false} height={170} width="80%">
         <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
