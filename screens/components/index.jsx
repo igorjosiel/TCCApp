@@ -171,3 +171,10 @@ export const Loading = styled(ActivityIndicator)`
     width: 100%;
     height: 100%;
 `;
+
+export const ContainerShowBuyProducts = styled(View)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+`;
