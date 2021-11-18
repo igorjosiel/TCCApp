@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { Text, View } from '../../components/Themed';
 import { TouchableOpacity, TextInput, Image, Pressable, ScrollView } from "react-native";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { FontAwesome } from 'react-native-vector-icons';
 import { ActivityIndicator } from 'react-native';
 
 const background = "#FFF";

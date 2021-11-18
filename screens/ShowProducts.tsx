@@ -15,7 +15,7 @@ export default function ShowProducts({ navigation, route }) {
       setTimeout(async() => {
         setLoading(false);
 
-        const { data, message } = await listProducts(valueFilter);
+        const { data, message } = await listProducts(value, typeSearch);
 
         if (data && data.length === 0) {
           return navigation.navigate('PageError', { message: "Produto não cadastrado no sistema. Por favor procure por outro!" });
