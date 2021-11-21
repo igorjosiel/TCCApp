@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text } from '../components/Themed';
+import { View } from '../components/Themed';
 import * as Styled from './components';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function ShowProducts({ navigation, route }) {
   const { cart } = useSelector((state) => state.cart);
-  // const [products, setProducts] = useState();
+
   const [loading, setLoading] = useState(true);
-  // const [message, setMessage] = useState();
+
   const labels = ['Produto', 'Descrição', 'Categoria', 'Preço', 'Código de barras', 'Quantidade'];
   const values = ['name', 'description', 'category', 'price', 'barCode', 'amount'];
 
   const deleteProduct = () => {
-    navigation.navigate('PageError', { message: 'Tem certeza de que deseja remover esse produto do carrinho?', icon: 'interrogation' });
+    navigation.navigate('PageError',
+    { message: 'Tem certeza de que deseja remover esse produto do carrinho?',
+      icon: 'interrogation',
+      removeProduct: true
+    });
   }
 
   useEffect(() => {
