@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View } from '../components/Themed';
 import * as Styled from './components';
-import { listProducts } from '../services';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ShowProducts({ navigation, route }) {
+  const { cart } = useSelector((state) => state);
+  console.log('Cart: ', cart)
   // const [products, setProducts] = useState();
   // const [loading, setLoading] = useState(true);
   // const [message, setMessage] = useState();

@@ -35,6 +35,19 @@ const InformationProduct = ({navigation, route}) => {
       fetchShowProduct();
   }, []);
 
+  const getProduct = () => {
+    const newProductCart = {
+      name: informationsProduct[0].value,
+      description: informationsProduct[1].value,
+      category: informationsProduct[2].value,
+      price: informationsProduct[3].value,
+      barCode: informationsProduct[4].value,
+      amount
+    };
+
+    console.log('New Product: ', newProductCart);
+  }
+
   const verifyField = (information) => {
     const { label, value } = information;
 
@@ -80,7 +93,12 @@ const InformationProduct = ({navigation, route}) => {
                 </Styled.ContainerSymbols>
             </Styled.RowsCardInformations>
             <Styled.ContainerShowBuyProducts>
-              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+              <Styled.ButtonBuy
+                title="Voltar"
+                color="#00BFFF"
+                onPress={() => getProduct()}
+                disabled={amount === 0 ? true : false}
+              >
                 <Styled.TextButton>
                   Adicionar
                 </Styled.TextButton>

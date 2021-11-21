@@ -62,6 +62,7 @@ export const ButtonGoBack = styled(Button)`
 
 export const ButtonBuy = styled(ButtonGoBack)`
     width: 50% !important;
+    opacity: ${props => props.disabled ? '0.3' : '1.0'};
 `;
 
 export const ButtonSymbols = styled(Button)`

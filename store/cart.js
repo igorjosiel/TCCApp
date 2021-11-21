@@ -4,7 +4,7 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: [],
     reducers: {
-        addProductCart(state, action = PayloadAction) {
+        addProductCart(state, action: PayloadAction<Cake[], String, { currentPage: number }>) {
             console.log("State: ", state);
             console.log("Action: ", action);
         }
