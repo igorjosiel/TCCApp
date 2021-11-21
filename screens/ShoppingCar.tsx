@@ -4,41 +4,36 @@ import * as Styled from './components';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function ShowProducts({ navigation, route }) {
-  const { cart } = useSelector((state) => state);
-  console.log('Cart: ', cart.cart)
+  const { cart } = useSelector((state) => state.cart);
   // const [products, setProducts] = useState();
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   // const [message, setMessage] = useState();
 
-  // useEffect(() => {
-  //   const { value, typeSearch } = route.params;
+  useEffect(() => {
+    const fetchSearchProducts = () => {
+      setTimeout(async() => {
+        setLoading(false);
 
-  //   const fetchSearchProducts = () => {
-  //     setTimeout(async() => {
-  //       setLoading(false);
+        if (cart && cart.length === 0) {
+          navigation.navigate('PageBought');
+        }
 
-  //       const { data, message } = await listProducts(value, typeSearch);
-
-  //       if (data && data.length === 0) {
-  //         return navigation.navigate('PageError', { message: "Produto não cadastrado no sistema. Por favor procure por outro!" });
-  //       }
-
-  //       setMessage(message);
-  //       setProducts(data);
+        // setMessage(message);
+        // setProducts(data);
         
-  //     }, 1000);
-  //   }
+      }, 1000);
+    }
 
-  //   fetchSearchProducts();
-  // }, []);
+    fetchSearchProducts();
+  }, [loading]);
 
   return (
     <Styled.ScreenShowCards>
-      {/* {loading ?
+      {loading ?
         <Styled.ContainerLoading>
           <Styled.Loading size="large" />
         </Styled.ContainerLoading> :
-      null} */}
+      null}
 
       <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {/* {products && products.map((product, index) => {

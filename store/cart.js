@@ -4,7 +4,7 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: {
         cart: [],
-        message: ''
+        message: 'Seu carrinho está vazio!'
     },
     reducers: {
         addProductCart(state, action: PayloadAction) {
