@@ -23,6 +23,8 @@ const InformationProduct = ({navigation, route}) => {
 
   const setNewProductCart = (newProductCart) => {
     dispatch(addProductCart(newProductCart));
+
+    navigation.navigate('PageBought');
   }
 
   useEffect(() => {

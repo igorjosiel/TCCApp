@@ -8,6 +8,7 @@ import OpenCamera from './screens/OpenCamera';
 import PageError from './screens/PageError';
 import ShoppingCart from './screens/ShoppingCar';
 import BuyProduct from './screens/BuyProduct';
+import PageBought from './screens/PageBought';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,10 @@ const ReadBarCodeNavigator = () => {
             <Stack.Screen
                 name="PageError"
                 component={PageError}
+            />
+            <Stack.Screen
+                name="PageBought"
+                component={PageBought}
             />
             <Stack.Screen
                 name="InformationProduct"
