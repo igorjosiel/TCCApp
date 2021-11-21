@@ -3,8 +3,12 @@ import { View, Pressable } from 'react-native';
 import * as Styled from './components';
 import formatMoney from '../utils/formatMoney';
 import { getOneProduct } from '../services';
+import { useDispatch } from 'react-redux';
+import { addProductCart } from '../store/cart';
 
 const InformationProduct = ({navigation, route}) => {
+  const dispatch = useDispatch();
+
   const [informationsProduct, setInformationsProduct] = useState([]);
   const [message, setMessage] = useState('');
   const [amount, setAmount] = useState(0);
@@ -15,6 +19,10 @@ const InformationProduct = ({navigation, route}) => {
 
   const decreaseAmount = () => {
     setAmount(amount - 1);
+  }
+
+  const setNewProductCart = (newProductCart) => {
+    dispatch(addProductCart(newProductCart));
   }
 
   useEffect(() => {
@@ -45,7 +53,7 @@ const InformationProduct = ({navigation, route}) => {
       amount
     };
 
-    console.log('New Product: ', newProductCart);
+    setNewProductCart(newProductCart);
   }
 
   const verifyField = (information) => {
