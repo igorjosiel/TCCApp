@@ -18,7 +18,7 @@ export default function ShowProducts({ navigation, route }) {
         const { data, message } = await listProducts(value, typeSearch);
 
         if (data && data.length === 0) {
-          return navigation.navigate('PageError', { message: "Produto não cadastrado no sistema. Por favor procure por outro!" });
+          return navigation.navigate('PageError', { message: "Produto não cadastrado no sistema. Por favor procure por outro!", icon: 'exclamation' });
         }
 
         setMessage(message);

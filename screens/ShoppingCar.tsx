@@ -11,6 +11,10 @@ export default function ShowProducts({ navigation, route }) {
   const labels = ['Produto', 'Descrição', 'Categoria', 'Preço', 'Código de barras', 'Quantidade'];
   const values = ['name', 'description', 'category', 'price', 'barCode', 'amount'];
 
+  const deleteProduct = () => {
+    navigation.navigate('PageError', { message: 'Tem certeza de que deseja remover esse produto do carrinho?', icon: 'interrogation' });
+  }
+
   useEffect(() => {
     const fetchSearchProducts = () => {
       setTimeout(async() => {
@@ -55,7 +59,7 @@ export default function ShowProducts({ navigation, route }) {
 
               <Styled.ButtonDeleteProduct
                 title="Remover"
-                // onPress={() => getProduct()}
+                onPress={() => deleteProduct()}
                 // disabled={amount === 0 ? true : false}
               >
                 <Styled.TextButton>

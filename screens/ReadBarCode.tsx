@@ -15,7 +15,7 @@ const ReadBarCode = ({navigation}) => {
 
   const searchBarCode = () => {
     if(search.length > 0) navigation.navigate('ShowProducts', { value: search, typeSearch: 'name' });
-    else navigation.navigate('PageError', { message: "Por favor, digite o código de barras ou o nome do produto!" });
+    else navigation.navigate('PageError', { message: "Por favor, digite o código de barras ou o nome do produto!", icon: 'exclamation' });
   }
 
   const onpenCamera = () => {
