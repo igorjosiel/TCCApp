@@ -117,7 +117,7 @@ export const Title = styled(Text)`
 
 export const DefaultText = styled(Text)`
     text-align: center;
-    font-size: 14;
+    font-size: 16;
     background-color: ${background};
     margin-top: 3;
 `;
@@ -178,4 +178,25 @@ export const ContainerShowBuyProducts = styled(View)`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+`;
+
+export const CardProductBought = styled(View)`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
+
+export const FontProductBought = styled(Text)`
+    font-weight: ${props => props.bold ? 'bold' : 'normal'};
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+`;
+
+export const ButtonDeleteProduct = styled(ButtonBuy)`
+    alignSelf: end;
+    margin-right: 20px;
+    backgroundColor: #FF6347;
 `;
