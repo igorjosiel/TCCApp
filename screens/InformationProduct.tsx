@@ -51,7 +51,7 @@ const InformationProduct = ({navigation, route}) => {
               </Styled.RowsCardInformations>
             })}
             <Styled.ContainerShowBuyProducts>
-              <Styled.ButtonBuy title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
+              <Styled.ButtonBuy title="Comprar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
                 <Styled.TextButton>
                   Comprar
                 </Styled.TextButton>

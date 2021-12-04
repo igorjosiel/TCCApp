@@ -8,9 +8,9 @@ const background = "#FFF";
 const defaultCard = `
     background-color: ${background};
     border-color: rgba(0, 0, 0, 0.12);
-    border-width: 1;
-    margin-top: 10;
-    border-radius: 6;
+    border-width: 1px;
+    margin-top: 10px;
+    border-radius: 6px;
 `;
 
 export const Card = styled(TouchableOpacity)`
@@ -77,6 +77,7 @@ export const ContainerSymbols = styled(View)`
     align-items: baseline;
     border-radius: 180px;
     width: 50% !important;
+    height: 32px;
 `;
 
 export const TextButton = styled(Text)`
@@ -91,8 +92,8 @@ export const TextButton = styled(Text)`
 
 export const TextButtonSymbol = styled(TextButton)`
     font-size: 18;
-    font-weight: unset;
-    font-weight: unset;
+    font-weight: bold;
+    font-weight: bold;
     margin-bottom: 0px;
 `;
 
@@ -144,14 +145,14 @@ export const CardInformations = styled(View)`
     margin-right: auto;
     margin-top: 15px;
     width: 90%;
-    height: 200px;
+    height: 240px;
 `;
 
 export const RowsCardInformations = styled(View)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 `;
 
 export const ContainerButton = styled(View)`

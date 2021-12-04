@@ -48,7 +48,7 @@ const ReadBarCode = ({navigation}) => {
             Pesquisar
         </Styled.TextButton>
     </Styled.Button>
-    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => onpenCamera()}>
+    <Styled.Button title="LigarCamera" color="#00BFFF" onPress={() => onpenCamera()}>
         <Styled.TextButton>
             <Styled.IconButton name="camera" size={15} color="black" />
             Ligar a câmera

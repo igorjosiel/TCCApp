@@ -104,7 +104,7 @@ const InformationProduct = ({navigation, route}) => {
             </Styled.RowsCardInformations>
             <Styled.ContainerShowBuyProducts>
               <Styled.ButtonBuy
-                title="Voltar"
+                title="Adicionar"
                 color="#00BFFF"
                 onPress={() => getProduct()}
                 disabled={amount === 0 ? true : false}
