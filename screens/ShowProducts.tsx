@@ -34,7 +34,7 @@ export default function ShowProducts({ navigation, route }) {
     <Styled.ScreenShowCards>
       {loading ?
         <Styled.ContainerLoading>
-          <Styled.Loading size="large" />
+          <Styled.Loading size="large" color="rgb(70, 48, 235)" />
         </Styled.ContainerLoading> :
       null}
 
