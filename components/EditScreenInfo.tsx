@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   helpContainer: {
-    marginTop: 15,
+    marginTop: '15px',
     marginHorizontal: 20,
     alignItems: 'center',
   },

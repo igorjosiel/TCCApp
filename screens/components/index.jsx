@@ -15,23 +15,23 @@ const defaultCard = `
 
 export const Card = styled(TouchableOpacity)`
     ${defaultCard};
-    margin-left: ${props => props.marginLeft ? props.marginLeft : 0};
-    margin-bottom: 5;
-    height: ${props => props.height ? props.height : 150};
-    width: ${props => props.width ? props.width : 150};
+    margin-left: ${props => props.marginLeft ? props.marginLeft : '0px'};
+    margin-bottom: 5px;
+    height: ${props => props.height ? props.height : '150px'};
+    width: ${props => props.width ? props.width : '150px'};
 `;
 
 export const CardHomeScreen = styled(View)`
     ${defaultCard};
-    height: ${props => props.height ? props.height : 150};
-    width: ${props => props.width ? props.width : 150};
-    margin-top: ${props => props.marginTop ? props.marginTop : 40};
+    height: ${props => props.height ? props.height : '150px'};
+    width: ${props => props.width ? props.width : '150px'};
+    margin-top: ${props => props.marginTop ? props.marginTop : '40px'};
 `;
 
 export const IconButton = styled(FontAwesome)`
-    margin-left: ${props => props.marginLeft ? props.marginLeft : '3'};
-    margin-right: ${props => props.marginRight ? props.marginRight : '10'};
-    margin-top: ${props => props.marginTop ? props.marginTop : 0};
+    margin-left: ${props => props.marginLeft ? props.marginLeft : '3px'};
+    margin-right: ${props => props.marginRight ? props.marginRight : '10px'};
+    margin-top: ${props => props.marginTop ? props.marginTop : '0px'};
 `;
 
 export const ScreenShowCards = styled(View)`
@@ -45,11 +45,11 @@ export const ScreenShowCards = styled(View)`
 
 export const Button = styled(Pressable)`
     width: 70%;
-    height: 40;
+    height: 40px;
     background: #00BFFF;
-    border-radius: 10;
+    border-radius: 10px;
     text-align: center;
-    margin-top: 15;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
 `;
@@ -67,7 +67,7 @@ export const ButtonBuy = styled(ButtonGoBack)`
 
 export const ButtonSymbols = styled(Button)`
     width: 30% !important;
-    height: 25;
+    height: 25px;
     opacity: ${props => props.disabled ? '0.3' : '1.0'};
 `;
 
@@ -97,7 +97,7 @@ export const TextButtonSymbol = styled(TextButton)`
 `;
 
 export const Input = styled(TextInput)`
-    height: 40;
+    height: 40px;
     width: 70%;
     border-width: 1;
     background-color: white;
@@ -111,7 +111,7 @@ export const Title = styled(Text)`
     font-size: 14;
     font-weight: bold;
     margin-top: 3;
-    height: ${props => props.height ? props.height : 150};
+    height: ${props => props.height ? props.height : '150px'};
     text-align: ${props => props.center ? 'center' : 'left'};
 `;
 
@@ -133,8 +133,8 @@ export const TextHomeScreen = styled(DefaultText)`
 `;
 
 export const DefaultImage = styled(Image)`
-    height: ${props => props.height ? props.height : 150};
-    width: ${props => props.width ? props.width : 150};
+    height: ${props => props.height ? props.height : '150px'};
+    width: ${props => props.width ? props.width : '150px'};
     margin-left: auto;
     margin-right: auto;
 `;
@@ -142,16 +142,16 @@ export const DefaultImage = styled(Image)`
 export const CardInformations = styled(View)`
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15;
+    margin-top: 15px;
     width: 90%;
-    height: 200;
+    height: 200px;
 `;
 
 export const RowsCardInformations = styled(View)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10;
+    margin-bottom: 10px;
 `;
 
 export const ContainerButton = styled(View)`

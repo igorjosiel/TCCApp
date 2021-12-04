@@ -34,19 +34,19 @@ const InformationProduct = ({navigation, route}) => {
   }
 
   return <Styled.ScreenShowCards paddingTop="12%">
-    <Styled.Card height="545" width="92%">
-      <Styled.Title center={true} height="28" uppercase={true}>
+    <Styled.Card height="545px" width="92%">
+      <Styled.Title center={true} height="28px" uppercase={true}>
         {informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}
       </Styled.Title>
       <View>
           <Styled.DefaultImage
-            height="240" width="90%"
+            height="240px" width="90%"
             source={require("../assets/images/arroz.jpg")}
           />
           <Styled.CardInformations>
             {informationsProduct && informationsProduct.map((information, index) => {
               return <Styled.RowsCardInformations key={index}>
-                <Styled.Title height="20">{information.label}</Styled.Title>
+                <Styled.Title height="20px">{information.label}</Styled.Title>
                 <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
               </Styled.RowsCardInformations>
             })}
