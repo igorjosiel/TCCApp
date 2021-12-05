@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { View } from '../components/Themed';
 import * as Styled from './components';
 import { useSelector } from 'react-redux';
+import formatMoney from '../utils/formatMoney';
 
 export default function ShowProducts({ navigation, route }) {
-  const { cart } = useSelector((state) => state.cart);
+  const { cart, totalValue } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
+  // const [totalValue, setTotalValue] = useState(0);
 
-  const labels = ['Produto', 'Descrição', 'Categoria', 'Preço', 'Código de barras', 'Quantidade'];
-  const values = ['name', 'description', 'category', 'price', 'barCode', 'amount'];
+  const labels = ['Produto', 'Descrição', 'Preço', 'Quantidade'];
+  const values = ['name', 'description', 'price', 'amount'];
 
   const deleteProduct = () => {
     navigation.navigate('PageError',
-    { message: 'Tem certeza de que deseja remover esse produto do carrinho?',
+    {
+      message: 'Tem certeza de que deseja remover esse produto do carrinho?',
       icon: 'interrogation',
       removeProduct: true
     });
@@ -47,34 +50,41 @@ export default function ShowProducts({ navigation, route }) {
 
       <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {cart && cart.map((product, index) => {
-        return (<Styled.Card key={index} height={385} width="92%" marginLeft="15" onPress={() => navigation.navigate('InformationProduct', product)}>
+        return (<Styled.Card key={index} height={240} width="92%" marginLeft="15">
           <View>
             <Styled.DefaultImage
-              height={120}
-              width="100%"
+              height={50}
+              width="15%"
+              borderRadius="90"
               source={require("../assets/images/arroz.jpg")}
             />
-              {labels && labels.map((label, index) => {
-                return <Styled.CardProductBought>
-                  <Styled.FontProductBought bold={true}>{label}:</Styled.FontProductBought>
-                  <Styled.FontProductBought>{product[values[index]]}</Styled.FontProductBought>
-                </Styled.CardProductBought>
-              })}
-
-              <Styled.ButtonDeleteProduct
-                title="Remover"
-                onPress={() => deleteProduct()}
-                // disabled={amount === 0 ? true : false}
-              >
-                <Styled.TextButton>
-                  Remover do Carrinho
-                </Styled.TextButton>
-              </Styled.ButtonDeleteProduct>
-          </View>
+            {labels && labels.map((label, index) => {
+              return <Styled.CardProductBought>
+                <Styled.FontProductBought bold={true}>{label}:</Styled.FontProductBought>
+                <Styled.FontProductBought>{product[values[index]]}</Styled.FontProductBought>
+              </Styled.CardProductBought>
+            })}
+            <Styled.ButtonDeleteProduct
+              title="Remover"
+              onPress={() => deleteProduct()}
+            >
+              <Styled.TextButton>
+                Remover do Carrinho
+              </Styled.TextButton>
+            </Styled.ButtonDeleteProduct>
+            </View>
           </Styled.Card>
         );
       })
     }
+
+    {cart && cart.length > 0 ?
+      <Styled.Card height={50} width="92%" marginLeft="15">
+        <Styled.RowsCardInformations>
+          <Styled.FontProductBought bold={true}>Valor Total:</Styled.FontProductBought>
+          <Styled.FontProductBought>{formatMoney(totalValue.toString())}</Styled.FontProductBought>
+        </Styled.RowsCardInformations>
+      </Styled.Card>: null}
     </Styled.Scroll>
     </Styled.ScreenShowCards>
   );

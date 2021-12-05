@@ -49,9 +49,7 @@ const InformationProduct = ({navigation, route}) => {
     const newProductCart = {
       name: informationsProduct[0].value,
       description: informationsProduct[1].value,
-      category: informationsProduct[2].value,
       price: informationsProduct[3].value,
-      barCode: informationsProduct[4].value,
       amount
     };
 

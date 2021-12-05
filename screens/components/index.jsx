@@ -138,6 +138,7 @@ export const DefaultImage = styled(Image)`
     width: ${props => props.width ? props.width : '150px'};
     margin-left: auto;
     margin-right: auto;
+    border-radius: ${props => props.borderRadius ? props.borderRadius : "5px"};
 `;
 
 export const CardInformations = styled(View)`
@@ -197,7 +198,7 @@ export const FontProductBought = styled(Text)`
 `;
 
 export const ButtonDeleteProduct = styled(ButtonBuy)`
-    alignSelf: end;
+    align-self: end;
     margin-right: 20px;
     backgroundColor: #FF6347;
 `;
