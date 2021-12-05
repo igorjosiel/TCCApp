@@ -82,7 +82,7 @@ export default function ShowProducts({ navigation, route }) {
       <Styled.Card height={50} width="92%" marginLeft="15">
         <Styled.RowsCardInformations>
           <Styled.FontProductBought bold={true}>Valor Total:</Styled.FontProductBought>
-          <Styled.FontProductBought>{formatMoney(totalValue.toString())}</Styled.FontProductBought>
+          <Styled.FontProductBought>{formatMoney(totalValue.toFixed(2).toString())}</Styled.FontProductBought>
         </Styled.RowsCardInformations>
       </Styled.Card>: null}
     </Styled.Scroll>
