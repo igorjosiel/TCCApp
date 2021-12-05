@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ReadBarCodeNavigator, ShoppingCartNavigator } from './CustomNavigation';
+import { ReadBarCodeNavigator, ShoppingCartNavigator, ListProducts } from './CustomNavigation';
 import Icon from "react-native-vector-icons/AntDesign";
 import { Provider } from 'react-redux';
 import { store } from './store/store';
@@ -25,8 +25,8 @@ const App = () => {
             inactiveBackgroundColor: '#FFFAFA',
           }}>
           <Tab.Screen name={"Home"} component={ReadBarCodeNavigator} />
+          <Tab.Screen name={"Lista"} component={ListProducts} />
           <Tab.Screen name={"Carrinho"} component={ShoppingCartNavigator} />
-          {/* <Tab.Screen name={"Promoções"} /> */}
         </Tab.Navigator>
       </NavigationContainer>
     </Provider >

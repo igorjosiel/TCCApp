@@ -9,6 +9,7 @@ import PageError from './screens/PageError';
 import ShoppingCart from './screens/ShoppingCar';
 import BuyProduct from './screens/BuyProduct';
 import PageBought from './screens/PageBought';
+import List from './screens/List';
 
 const Stack = createStackNavigator();
 
@@ -66,3 +67,19 @@ const ShoppingCartNavigator = () => {
 }
 
 export {ShoppingCartNavigator}
+
+const ListProducts = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+        }}>
+            <Stack.Screen
+                name="ListProducts"
+                component={List}
+            />
+        </Stack.Navigator>
+    )
+}
+
+export {ListProducts}
