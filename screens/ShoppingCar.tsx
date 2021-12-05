@@ -17,12 +17,13 @@ export default function ShowProducts({ navigation, route }) {
   const labels = ['Produto', 'Descrição', 'Preço', 'Quantidade'];
   const values = ['name', 'description', 'price', 'amount'];
 
-  const deleteProduct = () => {
+  const deleteProduct = (product, index) => {
     navigation.navigate('PageError',
     {
       message: 'Tem certeza de que deseja remover esse produto do carrinho?',
       icon: 'interrogation',
-      removeProduct: true
+      removeProduct: true,
+      product: {product, index: index}
     });
   }
 
@@ -77,7 +78,7 @@ export default function ShowProducts({ navigation, route }) {
             <Styled.ButtonDeleteProduct
               title="Remover"
               background="orange"
-              onPress={() => deleteProduct()}
+              onPress={() => deleteProduct(product, index)}
             >
               <Styled.TextButton>
                 Remover do Carrinho

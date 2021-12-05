@@ -8,11 +8,13 @@ const PageError = ({navigation, route}) => {
 
   const [message, setMessage] = useState('');
   const [icon, setIcon] = useState('');
+  const [product, setProduct] = useState(0);
   const [removeProduct, setRemoveProduct] = useState();
 
   useEffect(() => {
     setMessage(route.params.message);
     setIcon(route.params.icon);
+    setProduct(route.params.product);
 
     if (route.params.removeProduct) {
       setRemoveProduct(route.params.removeProduct);
@@ -24,7 +26,10 @@ const PageError = ({navigation, route}) => {
       <Styled.IconButton marginTop='15%' name={icon} size={50} color="black" marginLeft="auto" marginRight="auto" />
       <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
-    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={!removeProduct ? () => navigation.navigate('ReadBarCode') : () => dispatch(removeProductCart)}>
+    <Styled.Button
+      title="Pesquisar"
+      color="#00BFFF"
+      onPress={!removeProduct ? () => navigation.navigate('ReadBarCode') : () => {dispatch(removeProductCart(product)); navigation.navigate('PageBought')}}>
         <Styled.TextButton>
             {!removeProduct ? 'Voltar' : 'Remover'}
         </Styled.TextButton>

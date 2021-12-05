@@ -14,7 +14,12 @@ const cartSlice = createSlice({
             state.totalValue += parseFloat(action.payload.price.substr(3) * action.payload.amount);
         },
         removeProductCart(state, action: PayloadAction) {
-            console.log('Chegou');
+            const { amount, price } = action.payload.product;
+            const { index } = action.payload;
+
+            state.cart.splice(index, 1);
+            state.message = "Produto removido do carrinho com sucesso!";
+            state.totalValue -= parseFloat(price.substr(3) * amount);
         },
         clearCart(state, action: PayloadAction) {
             state.cart = [],
