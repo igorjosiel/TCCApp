@@ -200,5 +200,5 @@ export const FontProductBought = styled(Text)`
 export const ButtonDeleteProduct = styled(ButtonBuy)`
     align-self: end;
     margin-right: 20px;
-    backgroundColor: #FF6347;
+    backgroundColor: ${props => props.background ? props.background : "#FF6347"};
 `;

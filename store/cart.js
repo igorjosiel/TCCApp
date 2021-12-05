@@ -16,8 +16,13 @@ const cartSlice = createSlice({
         removeProductCart(state, action: PayloadAction) {
             console.log('Chegou');
         },
+        clearCart(state, action: PayloadAction) {
+            state.cart = [],
+            state.message = "Seu carrinho está vazio!",
+            state.totalValue = 0
+        }
     }
 });
 
-export const { addProductCart, removeProductCart } = cartSlice.actions;
+export const { addProductCart, removeProductCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

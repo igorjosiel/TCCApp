@@ -3,8 +3,12 @@ import { View } from '../components/Themed';
 import * as Styled from './components';
 import { useSelector } from 'react-redux';
 import formatMoney from '../utils/formatMoney';
+import { useDispatch } from 'react-redux';
+import { clearCart } from '../store/cart';
 
 export default function ShowProducts({ navigation, route }) {
+  const dispatch = useDispatch();
+
   const { cart, totalValue } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
@@ -20,6 +24,12 @@ export default function ShowProducts({ navigation, route }) {
       icon: 'interrogation',
       removeProduct: true
     });
+  }
+
+  const clearWholeCart = () => {
+    dispatch(clearCart());
+
+    navigation.navigate('PageBought');
   }
 
   useEffect(() => {
@@ -50,7 +60,7 @@ export default function ShowProducts({ navigation, route }) {
 
       <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {cart && cart.map((product, index) => {
-        return (<Styled.Card key={index} height={240} width="92%" marginLeft="15">
+        return (<Styled.Card key={index} height={250} width="92%" marginLeft="15">
           <View>
             <Styled.DefaultImage
               height={50}
@@ -66,6 +76,7 @@ export default function ShowProducts({ navigation, route }) {
             })}
             <Styled.ButtonDeleteProduct
               title="Remover"
+              background="orange"
               onPress={() => deleteProduct()}
             >
               <Styled.TextButton>
@@ -79,12 +90,23 @@ export default function ShowProducts({ navigation, route }) {
     }
 
     {cart && cart.length > 0 ?
-      <Styled.Card height={50} width="92%" marginLeft="15">
+    <>
+      <Styled.Card height={45} width="92%" marginLeft="15">
         <Styled.RowsCardInformations>
           <Styled.FontProductBought bold={true}>Valor Total:</Styled.FontProductBought>
           <Styled.FontProductBought>{formatMoney(totalValue.toFixed(2).toString())}</Styled.FontProductBought>
         </Styled.RowsCardInformations>
-      </Styled.Card>: null}
+      </Styled.Card>
+      <Styled.ButtonDeleteProduct
+        title="Remover"
+        background="#FF6347"
+        onPress={() => clearWholeCart()}
+      >
+        <Styled.TextButton>
+          Limpar o Carrinho
+        </Styled.TextButton>
+      </Styled.ButtonDeleteProduct>
+    </>: null}
     </Styled.Scroll>
     </Styled.ScreenShowCards>
   );
