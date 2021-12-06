@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import * as Styled from './components';
 import { useSelector } from 'react-redux';
 
-const PageBought = ({navigation, route}) => {
+const PageList = ({navigation, route}) => {
   const [message, setMessage] = useState('');
-  const { cart } = useSelector((state) => state);
+  const { list } = useSelector((state) => state);
 
   useEffect(() => {
-    setMessage(cart.message);
+    setMessage(list.message);
   });
 
   return <Styled.ScreenShowCards>
@@ -15,7 +15,7 @@ const PageBought = ({navigation, route}) => {
       <Styled.IconButton marginTop='15%' name="check" size={50} color="black" marginLeft="auto" marginRight="auto" />
       <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen>
-    <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ReadBarCode')}>
+    <Styled.Button title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ListProducts')}>
         <Styled.TextButton>
             Voltar
         </Styled.TextButton>
@@ -23,4 +23,4 @@ const PageBought = ({navigation, route}) => {
   </Styled.ScreenShowCards>
 }
 
-export default PageBought;
+export default PageList;

@@ -9,6 +9,7 @@ import PageError from './screens/PageError';
 import ShoppingCart from './screens/ShoppingCar';
 import BuyProduct from './screens/BuyProduct';
 import PageBought from './screens/PageBought';
+import PageList from './screens/PageList';
 import List from './screens/List';
 
 const Stack = createStackNavigator();
@@ -77,6 +78,10 @@ const ListProducts = () => {
             <Stack.Screen
                 name="ListProducts"
                 component={List}
+            />
+            <Stack.Screen
+                name="PageList"
+                component={PageList}
             />
         </Stack.Navigator>
     )

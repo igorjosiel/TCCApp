@@ -8,11 +8,9 @@ import { clearCart } from '../store/cart';
 
 export default function ShowProducts({ navigation, route }) {
   const dispatch = useDispatch();
-
   const { cart, totalValue } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
-  // const [totalValue, setTotalValue] = useState(0);
 
   const labels = ['Produto', 'Descrição', 'Preço', 'Quantidade'];
   const values = ['name', 'description', 'price', 'amount'];

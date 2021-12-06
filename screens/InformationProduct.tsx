@@ -39,31 +39,31 @@ const InformationProduct = ({navigation, route}) => {
         {informationsProduct.length && informationsProduct[0] && informationsProduct[0].value}
       </Styled.Title>
       <View>
-          <Styled.DefaultImage
-            height="240px" width="90%"
-            source={require("../assets/images/arroz.jpg")}
-          />
-          <Styled.CardInformations>
-            {informationsProduct && informationsProduct.map((information, index) => {
-              return <Styled.RowsCardInformations key={index}>
-                <Styled.Title height="20px">{information.label}</Styled.Title>
-                <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
-              </Styled.RowsCardInformations>
-            })}
-            <Styled.ContainerShowBuyProducts>
-              <Styled.ButtonBuy title="Comprar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
-                <Styled.TextButton>
-                  Comprar
-                </Styled.TextButton>
-              </Styled.ButtonBuy>
-              <Styled.ButtonGoBack title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
-                <Styled.TextButton>
-                  Voltar
-                </Styled.TextButton>
-              </Styled.ButtonGoBack>
-            </Styled.ContainerShowBuyProducts>
-          </Styled.CardInformations>
-        </View>
+        <Styled.DefaultImage
+          height="240px" width="90%"
+          source={require("../assets/images/arroz.jpg")}
+        />
+        <Styled.CardInformations>
+          {informationsProduct && informationsProduct.map((information, index) => {
+            return <Styled.RowsCardInformations key={index}>
+              <Styled.Title height="20px">{information.label}</Styled.Title>
+              <Styled.DefaultText>{verifyField(information)}</Styled.DefaultText>
+            </Styled.RowsCardInformations>
+          })}
+          <Styled.ContainerShowBuyProducts>
+            <Styled.ButtonBuy title="Comprar" color="#00BFFF" onPress={() => navigation.navigate('BuyProduct', { idProduct: route.params.id })}>
+              <Styled.TextButton>
+                Comprar
+              </Styled.TextButton>
+            </Styled.ButtonBuy>
+            <Styled.ButtonGoBack title="Voltar" color="#00BFFF" onPress={() => navigation.navigate('ShowProducts')}>
+              <Styled.TextButton>
+                Voltar
+              </Styled.TextButton>
+            </Styled.ButtonGoBack>
+          </Styled.ContainerShowBuyProducts>
+        </Styled.CardInformations>
+      </View>
     </Styled.Card>
   </Styled.ScreenShowCards>
 }
