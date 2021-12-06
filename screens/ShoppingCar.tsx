@@ -3,11 +3,8 @@ import { View } from '../components/Themed';
 import * as Styled from './components';
 import { useSelector } from 'react-redux';
 import formatMoney from '../utils/formatMoney';
-import { useDispatch } from 'react-redux';
-import { clearCart } from '../store/cart';
 
 export default function ShowProducts({ navigation, route }) {
-  const dispatch = useDispatch();
   const { cart, totalValue } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
@@ -20,15 +17,18 @@ export default function ShowProducts({ navigation, route }) {
     {
       message: 'Tem certeza de que deseja remover esse produto do carrinho?',
       icon: 'interrogation',
-      removeProduct: true,
+      removeProduct: '1',
       product: {product, index: index}
     });
   }
 
   const clearWholeCart = () => {
-    dispatch(clearCart());
-
-    navigation.navigate('PageBought');
+    navigation.navigate('PageError',
+    {
+      message: 'Tem certeza de que deseja limpar o carrinho?',
+      icon: 'interrogation',
+      removeProduct: '2'
+    });
   }
 
   useEffect(() => {

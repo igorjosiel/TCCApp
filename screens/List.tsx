@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import * as Styled from './components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addProductList, clearList } from '../store/list';
+import { addProductList } from '../store/list';
 // import { listProducts } from '../services';
 
 export default function ListProducts({ navigation, route }) {
@@ -45,9 +45,12 @@ const insertProduct = () => {
 }
 
 const clearWholeList = () => {
-  dispatch(clearList());
-
-  navigation.navigate('PageList');
+  navigation.navigate('PageError',
+  {
+    message: 'Tem certeza de que deseja limpar a lista?',
+    icon: 'interrogation',
+    removeProduct: '4'
+  });
 }
 
 const changeSearch = (text) => {
