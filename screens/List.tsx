@@ -4,7 +4,7 @@ import * as Styled from './components';
 // import { listProducts } from '../services';
 
 export default function ShowProducts({ navigation, route }) {
-//   const [products, setProducts] = useState();
+  const [newProduct, setNewProduct] = useState('');
 //   const [loading, setLoading] = useState(true);
 //   const [message, setMessage] = useState();
 
@@ -30,6 +30,10 @@ export default function ShowProducts({ navigation, route }) {
 //     fetchSearchProducts();
 //   }, []);
 
+const changeSearch = (text) => {
+  setNewProduct(text);
+}
+
   return (
     <Styled.ScreenShowCards>
       {/* {loading ?
@@ -37,6 +41,18 @@ export default function ShowProducts({ navigation, route }) {
           <Styled.Loading size="large" color="rgb(70, 48, 235)" />
         </Styled.ContainerLoading> :
       null} */}
+      <Styled.Input
+        onChangeText={(text) => changeSearch(text)}
+        value={newProduct}
+        // maxLength={!isNaN(search) ? 13 : 25}
+        placeholder="Digite aqui o novo produto..."
+      />
+      <Styled.Button title="InserirLista" color="#00BFFF" onPress={() => console.log('Foiii...')}>
+        <Styled.TextButton>
+          <Styled.IconButton name="list" size={15} color="black" />
+          Inserir na Lista
+        </Styled.TextButton>
+      </Styled.Button>
 
       {/* <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {products && products.map((product, index) => {

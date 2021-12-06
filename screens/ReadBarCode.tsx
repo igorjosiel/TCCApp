@@ -37,22 +37,22 @@ const ReadBarCode = ({navigation}) => {
         <Styled.TextHomeScreen>{messageTwo}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen> : showCards}
     <Styled.Input
-        onChangeText={(text) => changeSearch(text)}
-        value={search}
-        maxLength={!isNaN(search) ? 13 : 25}
-        placeholder="Digite aqui..."
-      />
-      <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => searchBarCode()}>
-        <Styled.TextButton>
-            <Styled.IconButton name="search" size={15} color="black" />
-            Pesquisar
-        </Styled.TextButton>
+      onChangeText={(text) => changeSearch(text)}
+      value={search}
+      maxLength={!isNaN(search) ? 13 : 25}
+      placeholder="Digite aqui..."
+    />
+    <Styled.Button title="Pesquisar" color="#00BFFF" onPress={() => searchBarCode()}>
+      <Styled.TextButton>
+        <Styled.IconButton name="search" size={15} color="black" />
+        Pesquisar
+      </Styled.TextButton>
     </Styled.Button>
     <Styled.Button title="LigarCamera" color="#00BFFF" onPress={() => onpenCamera()}>
-        <Styled.TextButton>
-            <Styled.IconButton name="camera" size={15} color="black" />
-            Ligar a câmera
-        </Styled.TextButton>
+      <Styled.TextButton>
+        <Styled.IconButton name="camera" size={15} color="black" />
+        Ligar a câmera
+      </Styled.TextButton>
     </Styled.Button>
   </Styled.ScreenShowCards>
 }
