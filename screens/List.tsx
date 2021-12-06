@@ -53,17 +53,22 @@ const clearWholeList = () => {
   });
 }
 
+const deleteProduct = (index) => {
+  navigation.navigate('PageError',
+  {
+    message: 'Tem certeza de que deseja remover esse produto da lista?',
+    icon: 'interrogation',
+    removeProduct: '3',
+    product: {index}
+  });
+}
+
 const changeSearch = (text) => {
   setNewProduct(text);
 }
 
   return (
     <Styled.ScreenShowCards>
-      {/* {loading ?
-        <Styled.ContainerLoading>
-          <Styled.Loading size="large" color="rgb(70, 48, 235)" />
-        </Styled.ContainerLoading> :
-      null} */}
       <Styled.Input
         onChangeText={(text) => changeSearch(text)}
         value={newProduct}
@@ -83,7 +88,7 @@ const changeSearch = (text) => {
             <Styled.ButtonDeleteProduct
               title="Remover"
               background="orange"
-              // onPress={() => clearWholeList()}
+              onPress={() => deleteProduct(index)}
             >
               <Styled.TextButton>
                 Remover da Lista

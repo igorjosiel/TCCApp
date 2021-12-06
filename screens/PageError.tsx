@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as Styled from './components';
 import { useDispatch } from 'react-redux';
 import { removeProductCart, clearCart } from '../store/cart';
-import { clearList } from '../store/list';
+import { clearList, removeProductList } from '../store/list';
 
 const PageError = ({navigation, route}) => {
   const dispatch = useDispatch();
@@ -33,9 +33,10 @@ const PageError = ({navigation, route}) => {
       onPress={!removeProduct ? () => navigation.navigate('ReadBarCode') :
               removeProduct === '1' ? () => {dispatch(removeProductCart(product)); navigation.navigate('PageBought')} :
               removeProduct === '2' ? () => {dispatch(clearCart()); navigation.navigate('PageBought')} :
+              removeProduct === '3' ? () => {dispatch(removeProductList(product)); navigation.navigate('PageList')} :
               () => {dispatch(clearList()); navigation.navigate('PageList')}}>
         <Styled.TextButton>
-            {!removeProduct ? 'Voltar' : 'Remover'}
+          {!removeProduct ? 'Voltar' : 'Remover'}
         </Styled.TextButton>
     </Styled.Button>
   </Styled.ScreenShowCards>

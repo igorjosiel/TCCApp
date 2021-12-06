@@ -11,14 +11,12 @@ const cartSlice = createSlice({
             state.list.push(action.payload);
             state.message = "Produto adicionado na lista com sucesso!";
         },
-        // removeProductCart(state, action: PayloadAction) {
-        //     const { amount, price } = action.payload.product;
-        //     const { index } = action.payload;
+        removeProductList(state, action: PayloadAction) {
+            const { index } = action.payload;
 
-        //     state.cart.splice(index, 1);
-        //     state.message = "Produto removido do carrinho com sucesso!";
-        //     state.totalValue -= parseFloat(price.substr(3) * amount);
-        // },
+            state.list.splice(index, 1);
+            state.message = "Produto removido da lista com sucesso!";
+        },
         clearList(state, action: PayloadAction) {
             state.list = [],
             state.message = "Sua lista está vazia!"
@@ -26,5 +24,5 @@ const cartSlice = createSlice({
     }
 });
 
-export const { addProductList, clearList } = cartSlice.actions;
+export const { addProductList, clearList, removeProductList } = cartSlice.actions;
 export default cartSlice.reducer;
