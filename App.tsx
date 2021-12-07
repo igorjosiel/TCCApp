@@ -24,14 +24,14 @@ const App = () => {
             activeBackgroundColor: '#FFFAFA',
             inactiveBackgroundColor: '#FFFAFA',
           }}>
-          <Tab.Screen name="Home" component={ReadBarCodeNavigator} options={{
-            tabBarIcon: () => <Ionicons name="home" size={30} />
+          <Tab.Screen name="Pesquisar" component={ReadBarCodeNavigator} options={{
+            tabBarIcon: () => <Ionicons name="search" size={25} />
           }} />
-          <Tab.Screen name={"Lista"} component={ListProducts} options={{
-            tabBarIcon: () => <Ionicons name="list" size={30} />
+          <Tab.Screen name="Lista" component={ListProducts} options={{
+            tabBarIcon: () => <Ionicons name="list" size={25} />
           }} />
-          <Tab.Screen name={"Carrinho"} component={ShoppingCartNavigator} options={{
-            tabBarIcon: () => <Ionicons name="cart" size={30} />
+          <Tab.Screen name="Carrinho" component={ShoppingCartNavigator} options={{
+            tabBarIcon: () => <Ionicons name="cart" size={25} />
           }} />
         </Tab.Navigator>
       </NavigationContainer>
