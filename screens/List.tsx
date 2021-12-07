@@ -83,9 +83,9 @@ const changeSearch = (text) => {
         </Styled.TextButton>
       </Styled.Button>
 
-      <Styled.Scroll style={{ marginLeft: list && list.length == 0 ? '80px' : '0px' }} centerContent={true} showsVerticalScrollIndicator={false}>
+      <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {list && list.length > 0 ? list.map((product, index) => {
-        return (<Styled.Card key={index} height={90} width="92%" marginLeft="15" onPress={() => console.log('Foiii')}>
+        return (<Styled.Card key={index} height={90} width="92%" marginLeft="15">
             <Styled.Title uppercase={true} center={true} height="20">{product.description}</Styled.Title>
             <Styled.ButtonDeleteProduct
               title="Remover"
@@ -99,7 +99,7 @@ const changeSearch = (text) => {
           </Styled.Card>
         );
       }) :
-      <Styled.CardHomeScreen height={40} width="80%">
+      <Styled.CardHomeScreen marginLeft={35} height={40} width="80%">
         <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
       </Styled.CardHomeScreen>
     }

@@ -36,9 +36,18 @@ const PageError = ({navigation, route}) => {
               removeProduct === '3' ? () => {dispatch(removeProductList(product)); navigation.navigate('ReadBarCode')} :
               () => {dispatch(clearList()); navigation.navigate('ReadBarCode')}}>
         <Styled.TextButton>
-          {!removeProduct ? 'Voltar' : 'Remover'}
+          {!removeProduct ? 'Voltar' : 'Sim'}
         </Styled.TextButton>
     </Styled.Button>
+    {removeProduct &&
+    <Styled.Button
+      title="Recusar"
+      color="#00BFFF"
+      onPress={() => navigation.navigate('ReadBarCode')}>
+        <Styled.TextButton>
+          Não
+        </Styled.TextButton>
+    </Styled.Button>}
   </Styled.ScreenShowCards>
 }
 

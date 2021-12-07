@@ -53,7 +53,7 @@ export default function ShowProducts({ navigation, route }) {
         </Styled.ContainerLoading> :
       null}
 
-      <Styled.Scroll style={{ marginLeft: cart && cart.length == 0 ? '80px' : '0px' }} centerContent={true} showsVerticalScrollIndicator={false}>
+      <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
       {cart && cart.length > 0 ? cart.map((product, index) => {
         return (<Styled.Card key={index} height={250} width="92%" marginLeft="15">
           <View>
@@ -82,7 +82,7 @@ export default function ShowProducts({ navigation, route }) {
           </Styled.Card>
         );
       }) :
-      <Styled.CardHomeScreen height={40} width="80%">
+      <Styled.CardHomeScreen marginLeft={35} height={40} width="80%">
         <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
       </Styled.CardHomeScreen>
     }

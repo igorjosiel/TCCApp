@@ -26,6 +26,7 @@ export const CardHomeScreen = styled(View)`
     height: ${props => props.height ? props.height : '150px'};
     width: ${props => props.width ? props.width : '150px'};
     margin-top: ${props => props.marginTop ? props.marginTop : '40px'};
+    margin-left: ${props => props.marginLeft ? props.marginLeft : "0px"}
 `;
 
 export const IconButton = styled(FontAwesome)`
@@ -198,7 +199,7 @@ export const FontProductBought = styled(Text)`
 `;
 
 export const ButtonDeleteProduct = styled(ButtonBuy)`
-    align-self: end;
+    align-self: flex-end;
     margin-right: 20px;
     backgroundColor: ${props => props.background ? props.background : "#FF6347"};
 `;
