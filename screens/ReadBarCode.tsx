@@ -30,11 +30,11 @@ const ReadBarCode = ({navigation}) => {
   return <Styled.ScreenShowCards paddingTop="0%">
     {showCards ?
     <Styled.CardHomeScreen disabled={false} height={170} width="80%">
-        <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
+      <Styled.TextHomeScreen>{messageOne}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen> : showCards}
     {showCards ?
     <Styled.CardHomeScreen height={130} width="80%">
-        <Styled.TextHomeScreen>{messageTwo}</Styled.TextHomeScreen>
+      <Styled.TextHomeScreen>{messageTwo}</Styled.TextHomeScreen>
     </Styled.CardHomeScreen> : showCards}
     <Styled.Input
       onChangeText={(text) => changeSearch(text)}
