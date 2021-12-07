@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import formatMoney from '../utils/formatMoney';
 
 export default function ShowProducts({ navigation, route }) {
-  const { cart, totalValue } = useSelector((state) => state.cart);
+  const { cart, totalValue, message } = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
 
@@ -39,10 +39,6 @@ export default function ShowProducts({ navigation, route }) {
         if (cart && cart.length === 0) {
           navigation.navigate('PageBought');
         }
-
-        // setMessage(message);
-        // setProducts(data);
-        
       }, 1000);
     }
 
@@ -57,8 +53,8 @@ export default function ShowProducts({ navigation, route }) {
         </Styled.ContainerLoading> :
       null}
 
-      <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
-      {cart && cart.map((product, index) => {
+      <Styled.Scroll style={{ marginLeft: cart && cart.length == 0 ? '80px' : '0px' }} centerContent={true} showsVerticalScrollIndicator={false}>
+      {cart && cart.length > 0 ? cart.map((product, index) => {
         return (<Styled.Card key={index} height={250} width="92%" marginLeft="15">
           <View>
             <Styled.DefaultImage
@@ -85,7 +81,10 @@ export default function ShowProducts({ navigation, route }) {
             </View>
           </Styled.Card>
         );
-      })
+      }) :
+      <Styled.CardHomeScreen height={40} width="80%">
+        <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
+      </Styled.CardHomeScreen>
     }
 
     {cart && cart.length > 0 ?
