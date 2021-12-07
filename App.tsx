@@ -2,9 +2,9 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ReadBarCodeNavigator, ShoppingCartNavigator, ListProducts } from './CustomNavigation';
-import Icon from "react-native-vector-icons/AntDesign";
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,9 +24,15 @@ const App = () => {
             activeBackgroundColor: '#FFFAFA',
             inactiveBackgroundColor: '#FFFAFA',
           }}>
-          <Tab.Screen name={"Home"} component={ReadBarCodeNavigator} />
-          <Tab.Screen name={"Lista"} component={ListProducts} />
-          <Tab.Screen name={"Carrinho"} component={ShoppingCartNavigator} />
+          <Tab.Screen name="Home" component={ReadBarCodeNavigator} options={{
+            tabBarIcon: () => <Ionicons name="home" size={30} />
+          }} />
+          <Tab.Screen name={"Lista"} component={ListProducts} options={{
+            tabBarIcon: () => <Ionicons name="list" size={30} />
+          }} />
+          <Tab.Screen name={"Carrinho"} component={ShoppingCartNavigator} options={{
+            tabBarIcon: () => <Ionicons name="cart" size={30} />
+          }} />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider >
