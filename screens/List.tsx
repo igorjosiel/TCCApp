@@ -38,8 +38,10 @@ export default function ListProducts({ navigation, route }) {
 //   }, []);
 
 const insertProduct = () => {
-  dispatch(addProductList({ description: newProduct }));
-  setNewProduct('');
+  if (newProduct) {
+    dispatch(addProductList({ description: newProduct }));
+    setNewProduct('');
+  }
 
   navigation.navigate('PageList');
 }
@@ -81,8 +83,8 @@ const changeSearch = (text) => {
         </Styled.TextButton>
       </Styled.Button>
 
-      <Styled.Scroll centerContent={true} showsVerticalScrollIndicator={false}>
-      {list && list.map((product, index) => {
+      <Styled.Scroll style={{ marginLeft: list && list.length == 0 ? '80px' : '0px' }} centerContent={true} showsVerticalScrollIndicator={false}>
+      {list && list.length > 0 ? list.map((product, index) => {
         return (<Styled.Card key={index} height={90} width="92%" marginLeft="15" onPress={() => console.log('Foiii')}>
             <Styled.Title uppercase={true} center={true} height="20">{product.description}</Styled.Title>
             <Styled.ButtonDeleteProduct
@@ -96,7 +98,10 @@ const changeSearch = (text) => {
             </Styled.ButtonDeleteProduct>
           </Styled.Card>
         );
-      })
+      }) :
+      <Styled.CardHomeScreen height={40} width="80%">
+        <Styled.TextHomeScreen>{message}</Styled.TextHomeScreen>
+      </Styled.CardHomeScreen>
     }
     {list && list.length > 0 ?
     <>

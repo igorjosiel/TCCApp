@@ -33,8 +33,8 @@ const PageError = ({navigation, route}) => {
       onPress={!removeProduct ? () => navigation.navigate('ReadBarCode') :
               removeProduct === '1' ? () => {dispatch(removeProductCart(product)); navigation.navigate('PageBought')} :
               removeProduct === '2' ? () => {dispatch(clearCart()); navigation.navigate('PageBought')} :
-              removeProduct === '3' ? () => {dispatch(removeProductList(product)); navigation.navigate('PageList')} :
-              () => {dispatch(clearList()); navigation.navigate('PageList')}}>
+              removeProduct === '3' ? () => {dispatch(removeProductList(product)); navigation.navigate('ReadBarCode')} :
+              () => {dispatch(clearList()); navigation.navigate('ReadBarCode')}}>
         <Styled.TextButton>
           {!removeProduct ? 'Voltar' : 'Remover'}
         </Styled.TextButton>
